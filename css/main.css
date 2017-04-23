@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    width:98%;
+    border: 1px solid red;
+}
+
+footer, header, main, nav, section, aside {
+    font-size: 1.1em;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+ul > li {
+    list-style: none;
+    display: inline-block;
+    border: 1px solid black;
+}

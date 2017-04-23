@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleSPATextEditor</title>
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./scripts/system-config.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div id="wrapper">
+    <header>SimpleSPATextEditor HEADER</header>
+    <nav>Navigation between current file, saved files, profile, register/log-in
+        <ul>
+            <li>Workbench</li>
+            <li>Saved files</li>
+            <li>Profile</li>
+            <li>Register / Log-in</li>
+            <li>Options</li>
+        </ul>
+    </nav>
+    <section>Section with buttons, menus, search, other</section>
+    <aside>Aside with all the currently open and edited files</aside>
+    <main>Main</main>
+    <footer>Some footer notes here</footer>
+    </div>
+    
+    <script>
+        System.import('./scripts/main.js');
+    </script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.js"></script>
+</body>
+
+</html>
