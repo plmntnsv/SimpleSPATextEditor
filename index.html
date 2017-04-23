@@ -12,54 +12,62 @@
 
 <body>
     <div id="wrapper">
-        <header>SimpleSPATextEditor HEADER</header>
-        <nav>Navigation between current file, saved files, profile, register/log-in
+        <header>
+            <h1>Simple SPA Text Editor</h1>
+        </header>
+        <nav>Navigation
             <ul>
-                <li>Workbench</li>
-                <li>Saved files</li>
-                <li>Profile</li>
-                <li>Register / Log-in</li>
-                <li>Options</li>
+                <li><a href="#">Workbench</a></li>
+                <li><a href="#">Saved files</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Options</a></li>
+                <li><a href="#">Log-in</a></li>
+                <li><a href="#">Register</a></li>
             </ul>
         </nav>
-        <aside>Aside with all the currently open and edited files</aside>
-        <section>Section with buttons, menus, search, other
-            <form action="">
-                <input type="button" value="B">
-                <input type="button" value="I">
-                <input type="button" value="U">
-                <!--<button>B</button>
-                <button>I</button>
-                <button>U</button>-->
-                <select>
-                    <option value="fontfamily">Font-family</option>
+        <div id="contents-container">
+            <aside>Aside with all the currently open and edited files</aside>
+            <div id="workbench-container">
+                <section>Current Document Work Section
+                    <form action="#">
+                        <input class="text-decoration-btn" type="button" value="B">
+                        <input class="text-decoration-btn" type="button" value="I">
+                        <input class="text-decoration-btn" type="button" value="U">
+                        <span>Font-family: </span>
+                        <select>
                     <option value="Arial">Arial</option>
                     <option value="Times new roman">Times new roman</option>
                     <option value="Colibri">Colibri</option>
                 </select>
-                <select>
-                    <option value="fontsize">Font-size</option>
-                    <option value="10">10</option>
-                    <option value="12">12</option>
-                    <option value="14">14</option>
+                        <span>Font-size: </span>
+                        <select>
+                    <option value="8">10</option>
+                    <option value="10">12</option>
+                    <option value="12">14</option>
+                    <option value="14">16</option>
                 </select>
-            </form>
+                    </form>
 
-            <form action="">
-                <input type="text" placeholder="Search">
-                <input type="button" value="Search">
-                <input type="button" value="Create New Document">
-                <input type="button" value="Save">
-            </form>
+                    <form action="">
+                        <input id="input-search-field" type="text" placeholder="Search">
+                        <input id="search-btn" type="button" value="Search">
+                        <input id="create-new-doc-btn" type="button" value="Create New Document">
+                        <input id="save-btn" type="button" value="Save">
+                        <input id="clear-btn" type="button" value="Clear All Text">
+                    </form>
 
-        </section>
-        <main>Main
-            <textarea>
-            
-            </textarea>
-        </main>
-        <footer><p>Telerik Academy 2016-1017 - Javascript Applications - Team Harpy</p></footer>
+                </section>
+                <main>Main
+                    <textarea></textarea>
+                </main>
+                <footer>
+                    <p>Telerik Academy 2016-1017 - Javascript Applications - Team Harpy</p>
+                </footer>
+            </div>
+
+        </div>
     </div>
+
 
     <script>
         System.import('./scripts/main.js');
