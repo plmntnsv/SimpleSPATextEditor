@@ -12,22 +12,55 @@
 
 <body>
     <div id="wrapper">
-    <header>SimpleSPATextEditor HEADER</header>
-    <nav>Navigation between current file, saved files, profile, register/log-in
-        <ul>
-            <li>Workbench</li>
-            <li>Saved files</li>
-            <li>Profile</li>
-            <li>Register / Log-in</li>
-            <li>Options</li>
-        </ul>
-    </nav>
-    <section>Section with buttons, menus, search, other</section>
-    <aside>Aside with all the currently open and edited files</aside>
-    <main>Main</main>
-    <footer>Some footer notes here</footer>
+        <header>SimpleSPATextEditor HEADER</header>
+        <nav>Navigation between current file, saved files, profile, register/log-in
+            <ul>
+                <li>Workbench</li>
+                <li>Saved files</li>
+                <li>Profile</li>
+                <li>Register / Log-in</li>
+                <li>Options</li>
+            </ul>
+        </nav>
+        <aside>Aside with all the currently open and edited files</aside>
+        <section>Section with buttons, menus, search, other
+            <form action="">
+                <input type="button" value="B">
+                <input type="button" value="I">
+                <input type="button" value="U">
+                <!--<button>B</button>
+                <button>I</button>
+                <button>U</button>-->
+                <select>
+                    <option value="fontfamily">Font-family</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times new roman">Times new roman</option>
+                    <option value="Colibri">Colibri</option>
+                </select>
+                <select>
+                    <option value="fontsize">Font-size</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                </select>
+            </form>
+
+            <form action="">
+                <input type="text" placeholder="Search">
+                <input type="button" value="Search">
+                <input type="button" value="Create New Document">
+                <input type="button" value="Save">
+            </form>
+
+        </section>
+        <main>Main
+            <textarea>
+            
+            </textarea>
+        </main>
+        <footer><p>Telerik Academy 2016-1017 - Javascript Applications - Team Harpy</p></footer>
     </div>
-    
+
     <script>
         System.import('./scripts/main.js');
     </script>
