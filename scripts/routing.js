@@ -1,12 +1,42 @@
-var root = null;
-var useHash = true;
-var hash = '#';
-var router = new Navigo(root, useHash, hash);
+var router = (() => {
+  var root = null;
+  var useHash = false;
+  var hash = '#';
+  let router;
 
-router
-  .on('/saved-files', function () {
-    console.log('saved files dir');
-  })
-  .resolve();
+  function init(params) {
+    router = new Navigo(root, useHash, hash);
 
-  //export { router };
+    // Implement routing logic here
+    router
+      .on('/workbench', function () {
+        console.log('workbench dir');
+      })
+      .on('/saved-files', function () {
+        console.log('saved files dir');
+      })
+      .on('/profile', function () {
+        console.log('profile');
+      })
+      .on('/options', function () {
+        console.log('options');
+      })
+      .on('/log-in', function () {
+        console.log('login');
+      })
+      .on('/register', function () {
+        console.log('register');
+      })
+      .resolve();
+  }
+
+  return {
+    init
+  }
+})();
+
+
+
+export {
+  router
+};

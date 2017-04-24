@@ -7,6 +7,13 @@
     <title>SimpleSPATextEditor</title>
     <script src="./node_modules/systemjs/dist/system.js"></script>
     <script src="./scripts/system-config.js"></script>
+    <script>
+        System.import('./scripts/main.js');
+    </script>
+    <!--External libraries-->
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="./node_modules/navigo/lib/navigo.js"></script>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -17,12 +24,13 @@
         </header>
         <nav>Navigation
             <ul>
+                <!--Add here different rout paths and then add them to routing.js-->
                 <li><a href="#/workbench">Workbench</a></li>
                 <li><a href="#/saved-files">Saved files</a></li>
-                <li><a href="#/profile">Profile</a></li>
                 <li><a href="#/options">Options</a></li>
+                <li><a href="#/profile">Profile</a></li>
                 <li><a href="#/log-in">Log-in</a></li>
-                <li><a href="#/regiseter">Register</a></li>
+                <li><a href="#/register">Register</a></li>
             </ul>
         </nav>
         <div id="contents-container">
@@ -30,24 +38,23 @@
             <div id="workbench-container">
                 <section>Current Document Work Section
                     <form action="#">
-                        <input class="text-decoration-btn" type="button" value="B">
-                        <input class="text-decoration-btn" type="button" value="I">
-                        <input class="text-decoration-btn" type="button" value="U">
+                        <input class="text-edit-btn" type="button" value="B">
+                        <input class="text-edit-btn" type="button" value="I">
+                        <input class="text-edit-btn" type="button" value="U">
                         <span>Font-family: </span>
                         <select>
-                    <option value="Arial">Arial</option>
-                    <option value="Times new roman">Times new roman</option>
-                    <option value="Colibri">Colibri</option>
-                </select>
+                            <option value="Arial">Arial</option>
+                            <option value="Times new roman">Times new roman</option>
+                            <option value="Colibri">Colibri</option>
+                        </select>
                         <span>Font-size: </span>
                         <select>
-                    <option value="8">10</option>
-                    <option value="10">12</option>
-                    <option value="12">14</option>
-                    <option value="14">16</option>
-                </select>
+                            <option value="8">10</option>
+                            <option value="10">12</option>
+                            <option value="12">14</option>
+                            <option value="14">16</option>
+                        </select>
                     </form>
-
                     <form action="">
                         <input id="input-search-field" type="text" placeholder="Search">
                         <input id="search-btn" type="button" value="Search">
@@ -67,14 +74,6 @@
 
         </div>
     </div>
-
-    <!--External libraries-->
-    <script>
-        System.import('./scripts/main.js');
-    </script>
-    <script src="./node_modules/jquery/dist/jquery.js"></script>
-    <script src="./node_modules/handlebars/dist/handlebars.js"></script>
-    <script src="./node_modules/navigo/lib/navigo.js"></script>
 </body>
 
 </html>
