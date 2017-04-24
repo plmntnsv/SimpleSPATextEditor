@@ -3,11 +3,9 @@ SystemJS.config({
  transpiler: 'plugin-babel',
  // tell SystemJS where to look for the dependencies
  map: {
-  'plugin-babel': 
-  './node_modules/systemjs-plugin-babel/plugin-babel.js',
-  'systemjs-babel-build': 
-  './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
+  'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
+  'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
   // app start script
-  'main': '../main.js'
+  'main': './main.js',
  }
 });
