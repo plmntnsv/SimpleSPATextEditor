@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimpleSPATextEditor</title>
+    <title>Simple-SPA-Text-Editor</title>
     <script src="./node_modules/systemjs/dist/system.js"></script>
     <script src="./scripts/system-config.js"></script>
     <script>
@@ -24,7 +24,7 @@
         </header>
         <nav>Navigation
             <ul>
-                <!--Add here different rout paths and then add them to routing.js-->
+                <!--Add here the rout paths to all the pages and then add them to routing.js-->
                 <li><a href="#/workbench">Workbench</a></li>
                 <li><a href="#/saved-files">Saved files</a></li>
                 <li><a href="#/options">Options</a></li>
@@ -33,46 +33,11 @@
                 <li><a href="#/register">Register</a></li>
             </ul>
         </nav>
-        <div id="contents-container">
-            <aside>Aside with all the currently open and edited files</aside>
-            <div id="workbench-container">
-                <section>Current Document Work Section
-                    <form action="#">
-                        <input class="text-edit-btn" type="button" value="B">
-                        <input class="text-edit-btn" type="button" value="I">
-                        <input class="text-edit-btn" type="button" value="U">
-                        <span>Font-family: </span>
-                        <select>
-                            <option value="Arial">Arial</option>
-                            <option value="Times new roman">Times new roman</option>
-                            <option value="Colibri">Colibri</option>
-                        </select>
-                        <span>Font-size: </span>
-                        <select>
-                            <option value="8">10</option>
-                            <option value="10">12</option>
-                            <option value="12">14</option>
-                            <option value="14">16</option>
-                        </select>
-                    </form>
-                    <form action="">
-                        <input id="input-search-field" type="text" placeholder="Search">
-                        <input id="search-btn" type="button" value="Search">
-                        <input id="create-new-doc-btn" type="button" value="Create New Document">
-                        <input id="save-btn" type="button" value="Save">
-                        <input id="clear-btn" type="button" value="Clear All Text">
-                    </form>
-
-                </section>
-                <main>Main
-                    <textarea></textarea>
-                </main>
-                <footer>
-                    <p>Telerik Academy 2016-2017 - Javascript Applications - Team Harpy</p>
-                </footer>
-            </div>
-
-        </div>
+        <!--Everything from the templates is generated here-->
+        <div id="contents-container"></div>
+        <footer>
+            <p>Telerik Academy 2016-2017 - Javascript Applications - Team "Harpy"</p>
+        </footer>
     </div>
 </body>
 

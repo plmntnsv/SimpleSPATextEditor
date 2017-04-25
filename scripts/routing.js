@@ -1,8 +1,11 @@
+import { templateLoader } from './template-loader.js';
+
 var router = (() => {
   var root = null;
   var useHash = false;
   var hash = '#';
   let router;
+  let $contentContainer = $("#contents-container");
 
   function init(params) {
     router = new Navigo(root, useHash, hash);
@@ -10,22 +13,46 @@ var router = (() => {
     // Implement routing logic here
     router
       .on('/workbench', function () {
-        console.log('workbench dir');
+        templateLoader.get('/workbench')
+        .then((template) => {
+          let html = template;
+          $contentContainer.html(html);
+        });
       })
       .on('/saved-files', function () {
-        console.log('saved files dir');
-      })
-      .on('/profile', function () {
-        console.log('profile');
+       templateLoader.get('/saved-files')
+        .then((template) => {
+          let html = template;
+          $contentContainer.html(html);
+        });
       })
       .on('/options', function () {
-        console.log('options');
+        templateLoader.get('/options')
+        .then((template) => {
+          let html = template;
+          $contentContainer.html(html);
+        });
+      })
+      .on('/profile', function () {
+        templateLoader.get('/profile')
+        .then((template) => {
+          let html = template;
+          $contentContainer.html(html);
+        });
       })
       .on('/log-in', function () {
-        console.log('login');
+        templateLoader.get('/log-in')
+        .then((template) => {
+          let html = template;
+          $contentContainer.html(html);
+        });
       })
       .on('/register', function () {
-        console.log('register');
+        templateLoader.get('/register')
+        .then((template) => {
+          let html = template;
+          $contentContainer.html(html);
+        });
       })
       .resolve();
   }

@@ -29,11 +29,15 @@ a:link, a:visited {
     text-decoration: none;
 }
 
-ul > li {
+nav > ul > li {
     list-style: none;
     display: inline-block;
     border: 1px solid black;
     padding: 3px;
+}
+
+main > ul {
+    margin-left: 25px;
 }
 
 textarea {
