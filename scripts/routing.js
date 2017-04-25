@@ -26,6 +26,12 @@ var router = (() => {
           $contentContainer.html(html);
         });
       })
+      // .on('/saved-files/:id', function (file) {
+      //   Promise.all([savedFiles.getById(file.id), templateLoader.get('/doc-file')])
+      //   .then(([data, template]) => {
+      //     $contentContainer.append(template(data));
+      //   });
+      // })
       .on('/options', function () {
         templateLoader.get('/options')
         .then((template) => {

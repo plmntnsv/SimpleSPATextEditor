@@ -9,7 +9,7 @@
     margin: 5px;
 }
 
-footer, header, nav, section, aside {
+footer, header, nav, aside, section {
     font-size: 1.1em;
     border: 1px solid black;
     margin: 5px;
@@ -38,6 +38,10 @@ nav > ul > li {
 
 main > ul {
     margin-left: 25px;
+}
+
+main > section:last-of-type {
+    height: 80%;
 }
 
 textarea {
