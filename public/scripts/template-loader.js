@@ -6,7 +6,7 @@ const templateLoader = (() => {
             if (cache[templateName]) {
                 resolve(cache[templateName]);
             } else {
-                $.get(`/templates/${templateName}.handlebars`)
+                $.get(`../templates/${templateName}.handlebars`)
                     .done((source) => {
                         let template = Handlebars.compile(source);
                         cache[templateName] = template;
