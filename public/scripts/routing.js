@@ -1,5 +1,5 @@
 //import { templateLoader } from './template-loader.js';
-import * as workbenchController from 'workbenchController';
+import * as documentController from 'documentController';
 import * as savedFilesController from 'savedFilesController';
 import * as categoriesController from 'categoriesController';
 import * as profileController from 'profileController';
@@ -17,8 +17,8 @@ var router = (() => {
 
     // Implement routing logic here
     router
-      .on(() => { router.navigate("#/workbench"); })
-      .on('/workbench', () => { workbenchController.get(); })
+      .on(() => { router.navigate("#/document"); })
+      .on('/document', () => { documentController.get(); })
       .on('/saved-files', () => { savedFilesController.get(); })
       .on('/categories', () => { categoriesController.get(); })
       // .on('/saved-files/:id', function (file) {

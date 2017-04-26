@@ -4,7 +4,7 @@ import { DocumentFile } from 'documentFile';
 let $contentContainer = $("#contents-container");
 
 export function get() {
-    templateLoader.get('/workbench')
+    templateLoader.get('/document')
         .then((template) => {
             let html = template;
             $contentContainer.html(html);

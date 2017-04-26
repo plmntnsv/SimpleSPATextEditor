@@ -38,36 +38,38 @@ class DocumentFile {
 }
 
 function getDate() {
-        let today = new Date();
-        let day = today.getDate();
-        let month = today.getMonth() + 1;
-        let year = today.getFullYear();
-        let hours = today.getHours();
-        let minutes = today.getMinutes();
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
 
-        if (day < 10) {
-            day = '0' + day;
-        }
+    if (day < 10) {
+        day = '0' + day;
+    }
 
-        if (month < 10) {
-            month = '0' + month;
-        }
+    if (month < 10) {
+        month = '0' + month;
+    }
 
-        today = `${day}/${month}/${year} - ${hours}:${minutes}h`;
+    today = `${day}/${month}/${year} - ${hours}:${minutes}h`;
 
-        return today;
+    return today;
 }
 
-    let id = (function () {
-        let id = 0;
+let id = (function () {
+    let id = 0;
 
-        function next() {
-            id += 1;
-            return id;
-        }
-        return {
-            next: next
-        };
-    })();
-    
-export { DocumentFile };
+    function next() {
+        id += 1;
+        return id;
+    }
+    return {
+        next: next
+    };
+})();
+
+export {
+    DocumentFile
+};

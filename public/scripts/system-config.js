@@ -7,7 +7,7 @@ SystemJS.config({
   'main': 'scripts/main.js',
   'router' : 'scripts/routing.js',
   'templateLoader' : 'scripts/template-loader.js',
-  'workbenchController' : 'scripts/controllers/workbench-controller.js',
+  'documentController' : 'scripts/controllers/document-controller.js',
   'categoriesController' : 'scripts/controllers/categories-controller.js',
   'logInController' : 'scripts/controllers/log-in-controller.js',
   'savedFilesController' : 'scripts/controllers/saved-files-controller.js',
