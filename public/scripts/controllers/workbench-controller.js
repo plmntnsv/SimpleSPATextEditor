@@ -15,9 +15,17 @@ export function get() {
             let $dumpster = $("#dumpster");
             let val;
 
+            if ($dumpster.html() !== '') {
+                $txtArea.val($dumpster.html());
+            }
+
+            $txtArea.on("input", function () {
+                $dumpster.html($txtArea.val());
+            });
+
             $saveBtn.on("click", function () {
                 val = $txtArea.val();
-                let newFile = new DocumentFile("name"); 
+                let newFile = new DocumentFile("name", "author", val); 
                 console.log(newFile);               
                 $dumpster.html(val);
             });

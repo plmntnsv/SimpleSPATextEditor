@@ -1,13 +1,15 @@
 class DocumentFile {
-    constructor(name) {
+    constructor(name, author, content) {
         this.name = name;
+        this.author = author;
+        this.content = content;
         this.createdOn = getDate();
+        this.id = id.next();
     }
 
     get name() {
         return this._name;
     }
-
     set name(n) {
         //validate
         this._name = n;
@@ -16,8 +18,22 @@ class DocumentFile {
     get createdOn() {
         return this._createdOn;
     }
-    set createdOn(c) {
-        this._createdOn = c;
+    set createdOn(cr) {
+        this._createdOn = cr;
+    }
+
+    get content() {
+        return this._content;
+    }
+    set content(c) {
+        this._content = c;
+    }
+
+    get author() {
+        return this._author;
+    }
+    set author(a) {
+        this._author = a;
     }
 }
 
@@ -40,5 +56,18 @@ function getDate() {
         today = `${day}/${month}/${year} - ${hours}:${minutes}h`;
 
         return today;
-    }
+}
+
+    let id = (function () {
+        let id = 0;
+
+        function next() {
+            id += 1;
+            return id;
+        }
+        return {
+            next: next
+        };
+    })();
+    
 export { DocumentFile };
