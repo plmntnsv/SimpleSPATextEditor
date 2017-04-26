@@ -1,6 +1,5 @@
-import {
-    templateLoader
-} from 'templateLoader';
+import { templateLoader } from 'templateLoader';
+import { DocumentFile } from 'documentFile';
 
 let $contentContainer = $("#contents-container");
 
@@ -18,11 +17,14 @@ export function get() {
 
             $saveBtn.on("click", function () {
                 val = $txtArea.val();
+                let newFile = new DocumentFile("name"); 
+                console.log(newFile);               
                 $dumpster.html(val);
             });
 
             $clearBtn.on("click", function () {
                $txtArea.val('');
+               $dumpster.html('');
             });
         });
 }
