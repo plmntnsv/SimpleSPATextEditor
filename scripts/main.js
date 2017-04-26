@@ -1,4 +1,4 @@
-import { router } from './routing.js';
+import { router } from 'router';
 
 router.init();
 
