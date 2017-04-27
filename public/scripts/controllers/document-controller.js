@@ -22,7 +22,8 @@ export function get() {
             let $clearBtn = $("#clear-btn");
             let $txtArea = $("#txt-area");
             let $dumpster = $("#dumpster");
-            let textContent;
+            let $fileNameInput = $("#file-name");
+            let textAreaContent;
             let searchContent;
 
 
@@ -74,10 +75,16 @@ export function get() {
 
             $saveBtn.on("click", function () {
                 $saveContainer.toggleClass("hidden");
-                textContent = $txtArea.html();
-                let newFile = new DocumentFile("name", "author", textContent);
-                console.log(newFile);
-                $dumpster.html(textContent);
+                textAreaContent = $txtArea.html();
+                let name = $fileNameInput.val();
+                if (name === "") {
+                    return;
+                }
+
+                let newFile = new DocumentFile(name, "author", textAreaContent);
+                console.log(newFile); // remove later
+                $dumpster.html(textAreaContent);
+                $txtArea.focus();
             });
 
             $clearBtn.on("click", function () {
@@ -86,5 +93,13 @@ export function get() {
                 $txtArea.html('');
                 $dumpster.html('');
             });
+
+            // TODO: fix selection to work with B U I
+            $txtArea.on('selectstart', function () {
+                $(document).one('mouseup', function () {
+                    console.log(this.getSelection());
+                });
+            });
+
         });
 }
