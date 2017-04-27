@@ -18,19 +18,24 @@
         </select>
     </form>
     <form action="#">
-        <input id="input-search-field" type="text" placeholder="Search">
+        <input id="input-search" type="text" placeholder="Search">
         <input id="search-btn" type="button" value="Search">
-        <input id="create-new-doc-btn" type="button" value="Create New Document">
-        <input id="save-btn" type="button" value="Save">
-        <input id="clear-btn" type="button" value="Clear All Text">
+        <input id="save-file-btn" type="button" value="Save File" disabled="disabled">
+        <input id="clear-btn" type="button" value="Clear All Text" disabled="disabled">
     </form>
 </section>
 <section class="save-window hidden">
-        <form action="">
-            <input type="text" placeholder="name">
-            <input type="button" value="Save">
-            <input type="button" value="Cancel">
+        <form id="save-window-form" action="">
+            <p>Name: </p>
+            <input type="text">
+            <p>Category: </p>
+            <select>
+            <option value="Main">Main</option>=
+            </select>
+            <input id="create-category" type="button" value="Create new category">
         </form>
+        <input id="save-btn" type="button" value="Save">
+        <input id="cancel-btn"type="button" value="Cancel">
 </section>
 <section>
 <textarea id="txt-area"></textarea>
