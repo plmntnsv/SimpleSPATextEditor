@@ -10,6 +10,10 @@ export function get() {
             $contentContainer.html(html);
 
             let $saveBtn = $("#save-btn");
+            let $saveContainer = $(".save-window");
+            
+                console.log($saveContainer);
+                console.log($saveBtn);
             let $clearBtn = $("#clear-btn");
             let $txtArea = $("#txt-area");
             let $dumpster = $("#dumpster");
@@ -24,6 +28,7 @@ export function get() {
             });
 
             $saveBtn.on("click", function () {
+                $saveContainer.toggleClass("hidden");
                 val = $txtArea.val();
                 let newFile = new DocumentFile("name", "author", val); 
                 console.log(newFile);               
