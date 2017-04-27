@@ -26,12 +26,13 @@ export function get() {
             let searchContent;
 
             if ($dumpster.html() !== '') {
-                $txtArea.textContent($dumpster.html());
+                $txtArea.html($dumpster.html());
             }
 
             $txtArea.on("input", function () {
-                $dumpster.html($txtArea.val());
-                if ($txtArea.val() === '') {
+                $dumpster.html($txtArea.text());
+
+                if ($txtArea.html() === '') {
                     $saveFileBtn.attr('disabled', 'disabled');
                     $clearBtn.attr('disabled', 'disabled');
                 } else {
@@ -40,16 +41,16 @@ export function get() {
                 }
             });
 
+            // TODO: implement more decent search...
             $searchBtn.on("click", function () {
                 searchContent = $inputSearchVal.val();
-                let foundMatch = $txtArea.val().indexOf(searchContent);
+                let text = $txtArea.text();
 
-                while (foundMatch > 0) {
-                    
-
-                    foundMatch = $txtArea.val().indexOf(searchContent, foundMatch + 1);
-                }
-
+                var regexp = new RegExp(searchContent, "g");
+                console.log(regexp);
+                text = text.replace(regexp, `<span style="color:red">${searchContent}</span>`);
+                console.log(text);
+                $txtArea.html(text);
             });
 
             $saveFileBtn.on("click", function () {
@@ -62,7 +63,7 @@ export function get() {
 
             $saveBtn.on("click", function () {
                 $saveContainer.toggleClass("hidden");
-                textContent = $txtArea.val();
+                textContent = $txtArea.html();
                 let newFile = new DocumentFile("name", "author", textContent);
                 console.log(newFile);
                 $dumpster.html(textContent);
@@ -71,7 +72,7 @@ export function get() {
             $clearBtn.on("click", function () {
                 $saveFileBtn.attr('disabled', 'disabled');
                 $clearBtn.attr('disabled', 'disabled');
-                $txtArea.val('');
+                $txtArea.html('');
                 $dumpster.html('');
             });
         });
