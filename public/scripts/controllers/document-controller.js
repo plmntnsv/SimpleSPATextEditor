@@ -25,6 +25,9 @@ export function get() {
             let textContent;
             let searchContent;
 
+
+            $txtArea.focus();
+
             if ($dumpster.html() !== '') {
                 $txtArea.html($dumpster.html());
             }
@@ -41,15 +44,23 @@ export function get() {
                 }
             });
 
-            // TODO: implement more decent search...
+            // TODO: implement more decent search if time...
             $searchBtn.on("click", function () {
                 searchContent = $inputSearchVal.val();
                 let text = $txtArea.text();
 
                 var regexp = new RegExp(searchContent, "g");
-                console.log(regexp);
                 text = text.replace(regexp, `<span style="color:red">${searchContent}</span>`);
-                console.log(text);
+                $txtArea.html(text);
+            });
+
+            $txtArea.on("focus", function () {
+                let text = $txtArea.text();
+
+                var regexpStart = new RegExp('<span style="color:red">', "g");
+                var regexpEnd = new RegExp('</span>', "g");
+                text = text.replace(regexpStart, '');
+                text = text.replace(regexpEnd, '');
                 $txtArea.html(text);
             });
 
