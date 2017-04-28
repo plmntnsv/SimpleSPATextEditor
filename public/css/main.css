@@ -38,6 +38,7 @@ main > section:last-of-type {
 
 #txt-area {
     font-size: 16px;
+    font-family: Verdana;
     height: 300px;
     overflow-y: scroll;
 }

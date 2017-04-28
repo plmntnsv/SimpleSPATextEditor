@@ -23,9 +23,12 @@ export function get() {
             let $txtArea = $("#txt-area");
             let $previewPanel = $("#preview-panel");
             let $fileNameInput = $("#file-name");
+
+            let $fontFamilySelect = $("#font-family-select");
             let $boldBtn = $(".bold-btn");
             let $italicBtn = $(".italic-btn");
             let $underLineBtn = $(".underline-btn");
+
             let textAreaContent;
             let searchContent;
             let selectedText;
@@ -109,6 +112,14 @@ export function get() {
                 document.execCommand('underline');
             });
 
+            $fontFamilySelect.change(function () {
+                let family = $(this).val();
+                let text = $txtArea.html();
+                $txtArea.css("font-family", family);
+                $previewPanel.css("font-family", family);
+                $txtArea.html(text);
+                $previewPanel.html(text);
+            });
 
         });
 }
