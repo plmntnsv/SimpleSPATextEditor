@@ -25,6 +25,7 @@ export function get() {
             let $fileNameInput = $("#file-name");
 
             let $fontFamilySelect = $("#font-family-select");
+            let $fontSizeSelect = $("#font-size-select");
             let $boldBtn = $(".bold-btn");
             let $italicBtn = $(".italic-btn");
             let $underLineBtn = $(".underline-btn");
@@ -121,5 +122,13 @@ export function get() {
                 $previewPanel.html(text);
             });
 
+            $fontSizeSelect.change(function () {
+                let size = $(this).val();
+                let text = $txtArea.html();
+                $txtArea.css("font-size", `${size}px`);
+                $previewPanel.css("font-size", `${size}px`);
+                $txtArea.html(text);
+                $previewPanel.html(text);
+            });
         });
 }
