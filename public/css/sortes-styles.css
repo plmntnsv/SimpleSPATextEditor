@@ -1,0 +1,30 @@
+﻿body {
+}
+
+#EnterQuestion{
+    width: 400px;
+}
+
+.randomNumBtn, #resultNumP, #prophecyP{
+    display: none;
+}
+
+#questionP, #prophecyP{
+    font-size: 18pt;
+}
+
+#text{
+    display: none;
+}
+
+.fb-share-button{
+    position: absolute;
+    bottom: 0.5%;
+}
+
+.G-share-button{
+    position: absolute;
+    bottom: 0.5%;
+    left: 2.2%;
+}
+
