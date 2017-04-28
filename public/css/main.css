@@ -59,7 +59,7 @@ textarea {
     display: none;
 }
 
-#dumpster {
+#preview-panel {
     border: 1px solid green;
     height: 200px;
     margin: 5px;
@@ -70,4 +70,8 @@ textarea {
     padding: 20px;
     background-color: pink;
     margin: auto;
+}
+
+.search-result {
+    background-color: lightblue;
 }

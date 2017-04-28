@@ -1,9 +1,5 @@
-import {
-    templateLoader
-} from 'templateLoader';
-import {
-    DocumentFile
-} from 'documentFile';
+import { templateLoader } from 'templateLoader';
+import { DocumentFile } from 'documentFile';
 
 let $contentContainer = $("#contents-container");
 
@@ -21,7 +17,7 @@ export function get() {
             let $saveContainer = $(".save-window");
             let $clearBtn = $("#clear-btn");
             let $txtArea = $("#txt-area");
-            let $dumpster = $("#dumpster");
+            let $previewPanel = $("#preview-panel");
             let $fileNameInput = $("#file-name");
             let textAreaContent;
             let searchContent;
@@ -29,13 +25,12 @@ export function get() {
 
             $txtArea.focus();
 
-            if ($dumpster.html() !== '') {
-                $txtArea.html($dumpster.html());
+            if ($previewPanel.html() !== '') {
+                $txtArea.html($previewPanel.html());
             }
 
             $txtArea.on("input", function () {
-                $dumpster.html($txtArea.text());
-
+                $previewPanel.html($txtArea.html());
                 if ($txtArea.html() === '') {
                     $saveFileBtn.attr('disabled', 'disabled');
                     $clearBtn.attr('disabled', 'disabled');
@@ -45,23 +40,23 @@ export function get() {
                 }
             });
 
-            // TODO: implement more decent search if time...
-            $searchBtn.on("click", function () {
-                searchContent = $inputSearchVal.val();
-                let text = $txtArea.text();
-
-                var regexp = new RegExp(searchContent, "g");
-                text = text.replace(regexp, `<span style="color:red">${searchContent}</span>`);
-                $txtArea.html(text);
-            });
-
             $txtArea.on("focus", function () {
-                let text = $txtArea.text();
+                let text = $txtArea.html();
 
-                var regexpStart = new RegExp('<span style="color:red">', "g");
+                var regexpStart = new RegExp('<span class="search-result">', "g");
                 var regexpEnd = new RegExp('</span>', "g");
                 text = text.replace(regexpStart, '');
                 text = text.replace(regexpEnd, '');
+                $txtArea.html(text);
+            });
+
+            // TODO: implement more decent search if time...
+            $searchBtn.on("click", function () {
+                searchContent = $inputSearchVal.val();
+                let text = $txtArea.html();
+
+                var regexp = new RegExp(searchContent, "g");
+                text = text.replace(regexp, `<span class="search-result">${searchContent}</span>`);
                 $txtArea.html(text);
             });
 
@@ -83,7 +78,7 @@ export function get() {
 
                 let newFile = new DocumentFile(name, "author", textAreaContent);
                 console.log(newFile); // remove later
-                $dumpster.html(textAreaContent);
+                $previewPanel.html(textAreaContent);
                 $txtArea.focus();
             });
 
@@ -91,15 +86,15 @@ export function get() {
                 $saveFileBtn.attr('disabled', 'disabled');
                 $clearBtn.attr('disabled', 'disabled');
                 $txtArea.html('');
-                $dumpster.html('');
+                $previewPanel.html('');
             });
 
-            // TODO: fix selection to work with B U I
-            $txtArea.on('selectstart', function () {
-                $(document).one('mouseup', function () {
-                    console.log(this.getSelection());
-                });
-            });
+            // // TODO: fix selection to work with B U I
+            // $txtArea.on('selectstart', function () {
+            //     $(document).one('mouseup', function () {
+            //         console.log(this.getSelection());
+            //     });
+            // });
 
         });
 }
