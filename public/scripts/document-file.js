@@ -1,5 +1,5 @@
 class DocumentFile {
-    constructor(name, author, content) {
+    constructor(name, author, category, content) {
         this.name = name;
         this.author = author;
         this.content = content;

@@ -1,5 +1,9 @@
-import { templateLoader } from 'templateLoader';
-import { DocumentFile } from 'documentFile';
+import {
+    templateLoader
+} from 'templateLoader';
+import {
+    DocumentFile
+} from 'documentFile';
 
 let $contentContainer = $("#contents-container");
 
@@ -19,8 +23,12 @@ export function get() {
             let $txtArea = $("#txt-area");
             let $previewPanel = $("#preview-panel");
             let $fileNameInput = $("#file-name");
+            let $boldBtn = $(".bold-btn");
+            let $italicBtn = $(".italic-btn");
+            let $underLineBtn = $(".underline-btn");
             let textAreaContent;
             let searchContent;
+            let selectedText;
 
 
             $txtArea.focus();
@@ -76,7 +84,7 @@ export function get() {
                     return;
                 }
 
-                let newFile = new DocumentFile(name, "author", textAreaContent);
+                let newFile = new DocumentFile(name, "author", category, textAreaContent);
                 console.log(newFile); // remove later
                 $previewPanel.html(textAreaContent);
                 $txtArea.focus();
@@ -89,12 +97,18 @@ export function get() {
                 $previewPanel.html('');
             });
 
-            // // TODO: fix selection to work with B U I
-            // $txtArea.on('selectstart', function () {
-            //     $(document).one('mouseup', function () {
-            //         console.log(this.getSelection());
-            //     });
-            // });
+            $boldBtn.on("click", function () {
+                document.execCommand('bold');
+            });
+
+            $italicBtn.on("click", function () {
+                document.execCommand('italic');
+            });
+
+            $underLineBtn.on("click", function () {
+                document.execCommand('underline');
+            });
+
 
         });
 }
