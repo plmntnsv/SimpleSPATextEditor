@@ -2,6 +2,7 @@
 import * as documentController from 'documentController';
 import * as savedFilesController from 'savedFilesController';
 import * as categoriesController from 'categoriesController';
+import * as sortesController from 'sortesController';
 import * as profileController from 'profileController';
 import * as logInController from 'logInController';
 import * as registerController from 'registerController';
@@ -27,6 +28,7 @@ var router = (() => {
       //     $contentContainer.append(template(data));
       //   });
       // })
+      .on('/sortes', () => { sortesController.get(); })
       .on('/profile', () => { profileController.get(); })
       .on('/log-in',  () => { logInController.get(); })
       .on('/register', () => { registerController.get(); })
