@@ -12,7 +12,8 @@ SystemJS.config({
   'logInController' : 'scripts/controllers/log-in-controller.js',
   'savedFilesController' : 'scripts/controllers/saved-files-controller.js',
   'registerController' : 'scripts/controllers/register-controller.js',
-  'profileController' : 'scripts/controllers/profile-controller.js',
+  'profileController': 'scripts/controllers/profile-controller.js',
+  'sortesController': 'scripts/controllers/sortes-controller.js',
   'documentFile': 'scripts/document-file.js',
  }
 });
