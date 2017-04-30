@@ -18,12 +18,12 @@
 }
 
 .fb-share-button{
-    position: absolute;
-    bottom: 0.5%;
+    position: relative;
+    bottom: 1.5%;
 }
 
 .G-share-button{
-    position: absolute;
+    position: relative;
     bottom: 0.5%;
     left: 2.2%;
 }
