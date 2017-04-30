@@ -8,7 +8,7 @@ import {
 let $contentContainer = $("#contents-container");
 
 export function get() {
-    templateLoader.get('/document')
+    templateLoader.get('document')
         .then((template) => {
             let html = template;
             $contentContainer.html(html);

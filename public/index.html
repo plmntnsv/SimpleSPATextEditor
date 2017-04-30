@@ -7,18 +7,19 @@
     <title>Team-Harpy-Text-Editor</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/sortes-styles.css" />
-    
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-    <script>
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-          fjs.parentNode.insertBefore(js, fjs);
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+
+    <!--<script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+            fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
 </head>
 
 <body>
@@ -42,17 +43,19 @@
         <!--Everything from the templates is generated here-->
         <main id="contents-container"></main>
         <footer>
-            <div class="fb-share-button" data-href="file:///D:/JS/JavaScript-Applications-master/Teamwork/Sortes/Sortes-Homericae/SortesMain.html" data-layout="button" data-size="small" data-mobile-iframe="true">
+            <p>Telerik Academy 2016-2017 - Javascript Applications - Team "Harpy"</p>
+            <!--<div class="fb-share-button" data-href="file:///D:/JS/JavaScript-Applications-master/Teamwork/Sortes/Sortes-Homericae/SortesMain.html"
+                data-layout="button" data-size="small" data-mobile-iframe="true">
                 <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">
-                    <img src="http://i.usatoday.net/communitymanager/_photos/technology-live/2011/02/27/facebooklogox-large.jpg" width="20px" />
+                    <img src="http://i.usatoday.net/communitymanager/_photos/technology-live/2011/02/27/facebooklogox-large.jpg" width="20px"
+                    />
                 </a>
             </div>
 
             <div class="G-share-button">
                 <link rel="canonical" href="http://www.example.com" />
                 <g:plus action="share"></g:plus>
-            </div>
-            <p>Telerik Academy 2016-2017 - Javascript Applications - Team "Harpy"</p>
+            </div>-->
         </footer>
     </div>
 
@@ -64,6 +67,19 @@
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/handlebars/dist/handlebars.js"></script>
     <script src="./node_modules/navigo/lib/navigo.js"></script>
+    <!--Firebase initialization-->
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBEM0PgfhYMdL4A4D6dmOLWUkXLVzQYWOE",
+            authDomain: "team-harpy-text-editor-e059c.firebaseapp.com",
+            databaseURL: "https://team-harpy-text-editor-e059c.firebaseio.com",
+            projectId: "team-harpy-text-editor-e059c",
+            storageBucket: "team-harpy-text-editor-e059c.appspot.com",
+            messagingSenderId: "344294327829"
+        };
+        firebase.initializeApp(config);
+    </script>
 </body>
 
 </html>

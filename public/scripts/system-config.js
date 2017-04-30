@@ -6,6 +6,7 @@ SystemJS.config({
   // app start script
   'main': 'scripts/main.js',
   'router' : 'scripts/routing.js',
+  'app' : '../../app.js',
   'templateLoader' : 'scripts/template-loader.js',
   'documentController' : 'scripts/controllers/document-controller.js',
   'categoriesController' : 'scripts/controllers/categories-controller.js',

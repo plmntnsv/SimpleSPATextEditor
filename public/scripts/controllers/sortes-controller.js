@@ -3,7 +3,7 @@ import { templateLoader } from 'templateLoader';
 let $contentContainer = $("#contents-container");
 
 export function get() {
-    templateLoader.get('/sortes')
+    templateLoader.get('sortes')
         .then((template) => {
           let html = template;
           $contentContainer.html(html);
