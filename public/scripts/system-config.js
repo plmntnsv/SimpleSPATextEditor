@@ -6,7 +6,6 @@ SystemJS.config({
   // app start script
   'main': 'scripts/main.js',
   'router' : 'scripts/routing.js',
-  'app' : '../../app.js',
   'templateLoader' : 'scripts/template-loader.js',
   'documentController' : 'scripts/controllers/document-controller.js',
   'categoriesController' : 'scripts/controllers/categories-controller.js',
@@ -16,6 +15,7 @@ SystemJS.config({
   'profileController': 'scripts/controllers/profile-controller.js',
   'sortesController': 'scripts/controllers/sortes-controller.js',
   'documentFile': 'scripts/document-file.js',
+  'documentFunctionality': 'scripts/document-functionality.js',
  }
 });
 

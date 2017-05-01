@@ -7,10 +7,10 @@ import * as profileController from 'profileController';
 import * as logInController from 'logInController';
 import * as registerController from 'registerController';
 
-var router = (() => {
-  var root = null;
-  var useHash = true;
-  var hash = '#';
+const router = (() => {
+  const root = null;
+  const useHash = true;
+  const hash = '#';
   let router;
 
   function init(params) {
