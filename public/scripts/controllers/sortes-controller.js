@@ -32,6 +32,9 @@ export function get() {
             //source Iliad text split
           var textArr = text.split(/\r\n|\r|\n/g);
 
+        //prophecies array
+          var prophecyArray = [];
+        
             //click submit question button, set and display question text and display generate random number button;
           questionBtn.click(function submitQuestion() {
 
@@ -76,6 +79,10 @@ export function get() {
               prophecy = prophecy.replace(/[[\]]/g, '');
               //
 
+              //save prophecy
+              var currentProphecy = new Prophecy("currentlyLoggedInUser", prophecy);
+              prophecyArray.push(currentProphecy);
+              
               //conduct divination with timeouts
               //display matching number
               setTimeout(function () {
