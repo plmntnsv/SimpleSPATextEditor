@@ -4,7 +4,7 @@ class DocumentFile {
         this.author = author;
         this.content = content;
         this.createdOn = getDate();
-        this.id = id.next();
+        this.id = fileId.next();
     }
 
     get name() {
@@ -58,7 +58,7 @@ function getDate() {
     return today;
 }
 
-let id = (function () {
+let fileId = (function () {
     let id = 0;
 
     function next() {

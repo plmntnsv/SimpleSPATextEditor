@@ -37,13 +37,15 @@ export function get() {
 
             $txtArea.focus();
 
-            if ($previewPanel.html() !== '') {
+            if ($previewPanel.text().length > 0) {
                 $txtArea.html($previewPanel.html());
+                $saveFileBtn.removeAttr('disabled');
+                    $clearBtn.removeAttr('disabled');
             }
 
             $txtArea.on("input", function () {
                 $previewPanel.html($txtArea.html());
-                if ($txtArea.html() === '') {
+                if ($txtArea.text().length <= 0) {
                     $saveFileBtn.attr('disabled', 'disabled');
                     $clearBtn.attr('disabled', 'disabled');
                 } else {
@@ -101,6 +103,7 @@ export function get() {
                 $previewPanel.html('');
             });
 
+            // text decoration events below
             $boldBtn.on("click", function () {
                 document.execCommand('bold');
             });
