@@ -9,7 +9,7 @@ export function get() {
     templateLoader.get('saved-files')
         .then((template) => {
             let html = template;
-            let context = data.getSavedFiles()
+            let context = data.getCategories()
                 .then(function (snapshot) {
                     let files = snapshot.val();
                     let theCompiledHtml = html(files);

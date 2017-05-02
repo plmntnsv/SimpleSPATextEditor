@@ -23,7 +23,7 @@ class CategoryFile {
 }
 
 
-//export this to utils js file
+//remove this later
 function getDate() {
     let today = new Date();
     let day = today.getDate();

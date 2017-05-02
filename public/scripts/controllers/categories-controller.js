@@ -1,11 +1,19 @@
-import { templateLoader } from 'templateLoader';
+import {
+    templateLoader
+} from 'templateLoader';
+import * as data from 'data';
 
 let $contentContainer = $("#contents-container");
 
 export function get() {
-    templateLoader.get('categories')
+    templateLoader.get('saved-files')
         .then((template) => {
-          let html = template;
-          $contentContainer.html(html);
+            let html = template;
+            let context = data.getCategories()
+                .then(function (snapshot) {
+                    let files = snapshot.val();
+                    let theCompiledHtml = html(files);
+                    $contentContainer.html(theCompiledHtml);
+                 });
         });
 }

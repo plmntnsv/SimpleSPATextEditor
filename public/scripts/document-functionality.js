@@ -101,13 +101,11 @@ export function init() {
             return;
         }
 
+        // if no new category is provided the file is saved to the DB for the selected category else creates new category and save it there
         if (newCategoryName === "") {
             categoryName = $chooseCategory.val();
             let newFile = new DocumentFile(name, "anonymous", categoryName, textAreaContent);
             data.postSaveFile(categoryName, newFile);
-                
-                
-         
         } else {
             categoryName = $createCategoryName.val();
             let $newOption = $(`<option value="${categoryName}">${categoryName}</option>`);
@@ -117,11 +115,6 @@ export function init() {
 
             data.postCategory(category, newFile);
         }
-
-        // let newFile = new DocumentFile(name, "anonymous", category._name, textAreaContent);
-        // //data.postSaveFile(newFile);
-        // category.add(newFile);
-        // console.log(category.docs);
 
         $previewPanel.html(textAreaContent);
         $createCategoryName.val("");

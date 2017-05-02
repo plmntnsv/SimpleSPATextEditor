@@ -3,7 +3,7 @@ import {
 } from 'requester';
 
 export function getSavedFiles(categoryName) {
-    let url = "/saved-files/data/categories/"+categoryName+"/files";
+    let url = "/saved-files/data/categories/"+categoryName;
     return firebase.database().ref(url).once('value');
 }
 
@@ -22,9 +22,9 @@ export function postCategory(category, file) {
     return firebase.database().ref().update(updates);
 }
 
-export function getCategory(name) {
-let url = "/saved-files/data/categories/" + name;
-    return firebase.database().ref(url+name).once('value');
+export function getCategories() {
+let url = "/saved-files/data/";
+    return firebase.database().ref(url).once('value');
 }
 
 export function postUser(params) {

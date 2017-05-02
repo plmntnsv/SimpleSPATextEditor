@@ -19,6 +19,7 @@ SystemJS.config({
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',
   'documentFunctionality': 'scripts/document-functionality.js',
+  'savedFilesFunctionality': 'scripts/saved-files-functionality.js',
  }
 });
 

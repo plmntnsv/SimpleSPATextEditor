@@ -15,7 +15,7 @@ var savedFilesDbRef = database.ref('/saved-files');
 
 
 
-//overrites data - use it with registered users
+//overrites data - use it with registered users - change password for example
 // function writeUserData(userId, name) {
 //   firebase.database().ref('profile/' + userId).set({
 //     username: name,
@@ -26,23 +26,3 @@ var savedFilesDbRef = database.ref('/saved-files');
 // let name = "Lol";
 
 // writeUserData(userId, name);
-
-//=====
-
-// let userId2 = 2;
-// let name2 = "Sol";
-
-// function writeNewPost(name2, userId2) {
-//   // A user entry.
-//   let user = {
-//     name: name2,
-//   };
-  
-//   var updates = {};
-//   updates['/saved-files/users/user-' + userId2] = user;
-
-//   return firebase.database().ref().update(updates);
-// }
-
-// writeNewPost("Pesho", 1);
-// writeNewPost("Tosho", 2);

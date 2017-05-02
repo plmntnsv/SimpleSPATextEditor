@@ -1,7 +1,11 @@
-<ul>
-    <li>Category 1</li>
-    <li>Category 2</li>
-    <li>Category 3</li>
-    <li>Category 4</li>
-    <li>Category 5</li>
-</ul>
+<section>
+    <form action="#">
+        <p>Category: </p>
+        <select id="show-category">
+            <option value="Main">Main</option>
+            {{#each categories}}
+            <option value="{{category._name}}">{{category._name}}</option>
+            {{/each}}
+        </select>
+    </form>
+</section>

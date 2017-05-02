@@ -20,8 +20,8 @@ const router = (() => {
     router
       .on(() => { router.navigate("#/document"); })
       .on('/document', () => { documentController.get(); })
-      .on('/saved-files', () => { savedFilesController.get(); })
-      .on('/categories', () => { categoriesController.get(); })
+      .on('/saved-files', () => { categoriesController.get(); })
+      //.on('/categories', () => { categoriesController.get(); })
       // .on('/saved-files/:id', function (file) {
       //   Promise.all([savedFiles.getById(file.id), templateLoader.get('/doc-file')])
       //   .then(([data, template]) => {
