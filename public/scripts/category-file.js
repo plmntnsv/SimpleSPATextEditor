@@ -1,11 +1,9 @@
-class DocumentFile {
-    constructor(name, author, category, content) {
+class CategoryFile {
+    constructor(name, author) {
         this.name = name;
-        this.category = category;
         this.author = author;
-        this.content = content;
         this.createdOn = getDate();
-        this.id = fileId.next();
+        this.id = categoryId.next();
     }
 
     get name() {
@@ -16,21 +14,6 @@ class DocumentFile {
         this._name = n;
     }
 
-    get category() {
-        return this._name;
-    }
-    set category(ca) {
-        //validate
-        this._category = ca;
-    }
-
-    get content() {
-        return this._content;
-    }
-    set content(c) {
-        this._content = c;
-    }
-
     get author() {
         return this._author;
     }
@@ -39,6 +22,8 @@ class DocumentFile {
     }
 }
 
+
+//export this to utils js file
 function getDate() {
     let today = new Date();
     let day = today.getDate();
@@ -60,7 +45,7 @@ function getDate() {
     return today;
 }
 
-let fileId = (function () {
+let categoryId = (function () {
     let id = 0;
 
     function next() {
@@ -73,5 +58,5 @@ let fileId = (function () {
 })();
 
 export {
-    DocumentFile
+    CategoryFile
 };

@@ -1,24 +1,36 @@
-import { requester } from 'requester';
+import {
+    requester
+} from 'requester';
 
-export function getSavedFiles() {
-    return requester.get("/saved-files/files");
+export function getSavedFiles(categoryName) {
+    let url = "/saved-files/data/categories/"+categoryName+"/files";
+    return firebase.database().ref(url).once('value');
 }
 
-export function postSaveFile(file) {  
-  return requester.post("/saved-files/files/file-", file);
+export function postSaveFile(categoryName, file) {
+    let url = "/saved-files/data/categories/"+categoryName+"/files/";
+    let updates = {};
+    updates[url + file._name] = file;
+    return firebase.database().ref().update(updates);
 }
 
-function postCategory(name) {
+export function postCategory(category, file) {
+    let url = "/saved-files/data/categories/";
+    let updates = {};
+    updates[url + category._name + "/category/"] = category;
+    updates[url + category._name + "/files/" + file._name] = file;
+    return firebase.database().ref().update(updates);
 }
 
-function getCategories(params) {
-    
+export function getCategory(name) {
+let url = "/saved-files/data/categories/" + name;
+    return firebase.database().ref(url+name).once('value');
 }
 
-function postUser(params) {
-    
+export function postUser(params) {
+
 }
 
-function getUsers(params) {
-    
+export function getUsers(params) {
+
 }

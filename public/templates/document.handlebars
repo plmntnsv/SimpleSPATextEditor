@@ -18,8 +18,8 @@
             <option value="18">18</option>
             <option value="20">20</option>
             <option value="22">22</option>
-            <option value="22">24</option>
-            <option value="22">26</option>
+            <option value="24">24</option>
+            <option value="26">26</option>
         </select>
     </form>
     <form action="#">
@@ -34,10 +34,14 @@
             <p>Name: </p>
             <input id="file-name" type="text">
             <p>Category: </p>
-            <select>
+            <select id="choose-category">
             <option value="Main">Main</option>
+            {{#each category}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
             </select>
-            <input id="create-category" type="button" value="Create new category">
+            <input id="create-category-btn" type="button" value="Create new category">
+            <input id="create-category-text" class="hidden" type="text">
         </form>
         <input id="save-btn" type="button" value="Save">
         <input id="cancel-btn"type="button" value="Cancel">

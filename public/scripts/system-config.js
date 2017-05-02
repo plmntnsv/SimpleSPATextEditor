@@ -17,6 +17,7 @@ SystemJS.config({
   'profileController': 'scripts/controllers/profile-controller.js',
   'sortesController': 'scripts/controllers/sortes-controller.js',
   'documentFile': 'scripts/document-file.js',
+  'categoryFile': 'scripts/category-file.js',
   'documentFunctionality': 'scripts/document-functionality.js',
  }
 });

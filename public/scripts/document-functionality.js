@@ -1,4 +1,9 @@
-import { DocumentFile } from 'documentFile';
+import {
+    DocumentFile
+} from 'documentFile';
+import {
+    CategoryFile
+} from 'categoryFile';
 import * as data from 'data';
 
 export function init() {
@@ -13,16 +18,20 @@ export function init() {
     let $previewPanel = $("#preview-panel");
     let $fileNameInput = $("#file-name");
 
+    // let $chooseCategory = $("#choose-category");
+    // let $createCategoryStartBtn = $("#create-category-btn");
+    // let $createCategoryName = $("#create-category-text");
+    // let $saveCategoryBtn = $("#save-category-btn");
+
     let $fontFamilySelect = $("#font-family-select");
     let $fontSizeSelect = $("#font-size-select");
     let $boldBtn = $(".bold-btn");
     let $italicBtn = $(".italic-btn");
     let $underLineBtn = $(".underline-btn");
 
-    let textAreaContent;
     let searchContent;
-    let selectedT
-    
+    //let selectedText;
+
     $txtArea.focus();
 
     if ($previewPanel.text().length > 0) {
@@ -70,20 +79,60 @@ export function init() {
         $saveContainer.toggleClass("hidden");
     });
 
+    let $chooseCategory = $("#choose-category");
+    let $createCategoryStartBtn = $("#create-category-btn");
+    let $createCategoryName = $("#create-category-text");
+    let newCategoryName = "";
+
+    $createCategoryName.on("input", function () {
+        newCategoryName = $createCategoryName.val();
+    });
+
     $saveBtn.on("click", function () {
+        $fileNameInput.focus();
         $saveContainer.toggleClass("hidden");
-        textAreaContent = $txtArea.html();
+        let textAreaContent = $txtArea.html();
         let name = $fileNameInput.val();
+        let categoryName;
+        let newCategory;
+        let category;
+
         if (name === "") {
             return;
         }
 
-        let newFile = new DocumentFile(name, "author", "Main", textAreaContent);
+        if (newCategoryName === "") {
+            categoryName = $chooseCategory.val();
+            let newFile = new DocumentFile(name, "anonymous", categoryName, textAreaContent);
+            data.postSaveFile(categoryName, newFile);
+                
+                
+         
+        } else {
+            categoryName = $createCategoryName.val();
+            let $newOption = $(`<option value="${categoryName}">${categoryName}</option>`);
+            $newOption.appendTo($chooseCategory);
+            category = new CategoryFile(categoryName, "anonymous");
+            let newFile = new DocumentFile(name, "anonymous", category._name, textAreaContent);
 
-        data.postSaveFile(newFile);
-        
+            data.postCategory(category, newFile);
+        }
+
+        // let newFile = new DocumentFile(name, "anonymous", category._name, textAreaContent);
+        // //data.postSaveFile(newFile);
+        // category.add(newFile);
+        // console.log(category.docs);
+
         $previewPanel.html(textAreaContent);
-        $txtArea.focus();
+        $createCategoryName.val("");
+        newCategoryName = $createCategoryName.val();
+        $fileNameInput.val("");
+        $createCategoryName.addClass("hidden");
+        //$txtArea.focus();
+    });
+
+    $createCategoryStartBtn.on("click", function () {
+        $createCategoryName.removeClass("hidden").focus();
     });
 
     $clearBtn.on("click", function () {
