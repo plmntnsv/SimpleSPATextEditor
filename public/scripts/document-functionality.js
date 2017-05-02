@@ -1,9 +1,5 @@
-import {
-    DocumentFile
-} from 'documentFile';
-import {
-    CategoryFile
-} from 'categoryFile';
+import { DocumentFile } from 'documentFile';
+import { CategoryFile } from 'categoryFile';
 import * as data from 'data';
 
 export function init() {
@@ -17,11 +13,6 @@ export function init() {
     let $txtArea = $("#txt-area");
     let $previewPanel = $("#preview-panel");
     let $fileNameInput = $("#file-name");
-
-    // let $chooseCategory = $("#choose-category");
-    // let $createCategoryStartBtn = $("#create-category-btn");
-    // let $createCategoryName = $("#create-category-text");
-    // let $saveCategoryBtn = $("#save-category-btn");
 
     let $fontFamilySelect = $("#font-family-select");
     let $fontSizeSelect = $("#font-size-select");
