@@ -35,9 +35,8 @@
             <input id="file-name" type="text">
             <p>Category: </p>
             <select id="choose-category">
-            <option value="Main">Main</option>
-            {{#each category}}
-            <option value="{{name}}">{{name}}</option>
+            {{#each categories}}
+            <option value="{{category._name}}">{{category._name}}</option>
             {{/each}}
             </select>
             <input id="create-category-btn" type="button" value="Create new category">

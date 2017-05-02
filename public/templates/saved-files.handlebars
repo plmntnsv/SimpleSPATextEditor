@@ -1,7 +1,8 @@
-
-    {{#each files}}
-        <p>"{{_name}}" by {{_author}} in "{{_category}}" category - {{createdOn}}</p>
-    {{/each}}
-
-
-
+ {{#each files}}
+<p>"{{_name}}" by {{_author}} in "{{_category}}" category - {{createdOn}}</p>
+<form action="">
+    <input type="button" value="Preview">
+    <input type="button" value="Delete">
+    <input type="button" value="Share">
+</form>
+{{/each}}

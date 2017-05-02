@@ -2,8 +2,6 @@ import { templateLoader } from 'templateLoader';
 import * as data from 'data';
 import * as savedFilesFunctionality from 'savedFilesFunctionality';
 
-
-//let $sideContainer = $("#side");
 let $contentContainer = $("#contents-container");
 
 export function get() {

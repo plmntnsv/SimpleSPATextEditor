@@ -1,8 +1,7 @@
 <section>
     <form action="#">
-        <p>Category: </p>
         <select id="show-category">
-            <option value="Main">Main</option>
+            <option value="Select category">Select category</option>
             {{#each categories}}
             <option value="{{category._name}}">{{category._name}}</option>
             {{/each}}
@@ -10,5 +9,4 @@
     </form>
 </section>
 <section id="save-files-container">
-
 </section>

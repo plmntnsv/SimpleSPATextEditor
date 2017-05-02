@@ -1,6 +1,4 @@
-import {
-    requester
-} from 'requester';
+import { requester } from 'requester';
 
 export function getSavedFiles(categoryName) {
     let url = "/saved-files/data/categories/"+categoryName;
@@ -14,17 +12,17 @@ export function postSaveFile(categoryName, file) {
     return firebase.database().ref().update(updates);
 }
 
+export function getCategories() {
+let url = "/saved-files/data/";
+    return firebase.database().ref(url).once('value');
+}
+
 export function postCategory(category, file) {
     let url = "/saved-files/data/categories/";
     let updates = {};
     updates[url + category._name + "/category/"] = category;
     updates[url + category._name + "/files/" + file._name] = file;
     return firebase.database().ref().update(updates);
-}
-
-export function getCategories() {
-let url = "/saved-files/data/";
-    return firebase.database().ref(url).once('value');
 }
 
 export function postUser(params) {
