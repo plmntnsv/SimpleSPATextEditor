@@ -6,3 +6,4 @@ js-app team harpy project
 - Bootstrap + UI
 - Web data storage (Firebase)
 - Unit tests
+- sortes-controller - use jquery

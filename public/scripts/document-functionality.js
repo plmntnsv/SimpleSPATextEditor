@@ -1,6 +1,5 @@
-import {
-    DocumentFile
-} from 'documentFile';
+import { DocumentFile } from 'documentFile';
+import * as data from 'data';
 
 export function init() {
     let $saveBtn = $("#save-btn");
@@ -13,7 +12,6 @@ export function init() {
     let $txtArea = $("#txt-area");
     let $previewPanel = $("#preview-panel");
     let $fileNameInput = $("#file-name");
-    console.log($saveBtn);
 
     let $fontFamilySelect = $("#font-family-select");
     let $fontSizeSelect = $("#font-size-select");
@@ -80,8 +78,10 @@ export function init() {
             return;
         }
 
-        let newFile = new DocumentFile(name, "author", category, textAreaContent);
-        console.log(newFile); // remove later
+        let newFile = new DocumentFile(name, "author", "Main", textAreaContent);
+
+        data.postSaveFile(newFile);
+        
         $previewPanel.html(textAreaContent);
         $txtArea.focus();
     });
