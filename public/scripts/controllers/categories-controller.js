@@ -10,10 +10,10 @@ export function get() {
             let html = template;
             let context = data.getCategories()
                 .then(function (snapshot) {
-                    let files = snapshot.val();
-                    let theCompiledHtml = html(files);
+                    let categories = snapshot.val();
+                    let theCompiledHtml = html(categories);
                     $contentContainer.html(theCompiledHtml);
                  })
-                 .then(() => savedFilesFunctionality.init());
+                 .then(() => savedFilesFunctionality.categoryFilesInit());
         });
 }
