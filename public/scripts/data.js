@@ -17,6 +17,13 @@ export function postSaveFile(categoryName, file) {
     return firebase.database().ref().update(updates);
 }
 
+export function deleteFile(fileName, categoryName) {
+    console.log(fileName);
+    console.log(categoryName);
+     let url = `/saved-files/data/categories/${categoryName}/files/${fileName}`;
+    return firebase.database().ref(url).remove();
+}
+
 export function getCategories() {
 let url = "/saved-files/data/";
     return firebase.database().ref(url).once('value');

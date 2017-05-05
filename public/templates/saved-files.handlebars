@@ -3,8 +3,12 @@
     <p>"{{_name}}" by {{_author}} in "{{_category}}" category - {{createdOn}}</p>
     <form action="">
         <input class="preview-btn" name="{{_name}}" type="button" value="Preview">
-        <input type="button" value="Delete">
-        <input type="button" value="Share">
+        <input class="delete-btn" name="{{_name}}" type="button" value="Delete">
+        <input class="share-btn" type="button" value="Share">
+    </form>
+    <form action="" class="conformation-form hidden" name="{{_name}}">
+        <input class="yes-btn" name="{{_name}}" type="button" value="Yes">
+        <input class="no-btn" name="{{_name}}" type="button" value="No">
     </form>
 </div>
 {{/each}}
