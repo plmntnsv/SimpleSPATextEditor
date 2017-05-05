@@ -26,7 +26,7 @@ class DocumentFile {
     }
 
     get category() {
-        return this._name;
+        return this._category;
     }
     set category(ca) {
         this._category = ca;

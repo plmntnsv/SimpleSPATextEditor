@@ -20,6 +20,8 @@ SystemJS.config({
   // classes
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',
+  'user' : 'scripts/user.js',
+  'admin' : 'scripts/admin-user.js',
   // app functionality
   'documentFunctionality': 'scripts/document-functionality.js',
   'savedFilesFunctionality': 'scripts/saved-files-functionality.js',
