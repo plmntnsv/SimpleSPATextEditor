@@ -1,17 +1,26 @@
+import * as utils from "utils";
+
 class CategoryFile {
     constructor(name, author) {
         this.name = name;
         this.author = author;
-        this.createdOn = getDate();
-        this.id = categoryId.next();
+        this.createdOn = utils.getDate();
+        this.id = utils.categoryIdGenerator.next();
     }
 
     get name() {
         return this._name;
     }
-    set name(n) {
-        //validate
-        this._name = n;
+    set name(categoryName) {
+        if (!categoryName) {
+            throw "Category name cannot be null";
+        }
+
+        if (categoryName.length === 0) {
+            throw "Category name cannot be empty";
+        }
+
+        this._name = categoryName;
     }
 
     get author() {
@@ -21,41 +30,6 @@ class CategoryFile {
         this._author = a;
     }
 }
-
-
-//remove this later
-function getDate() {
-    let today = new Date();
-    let day = today.getDate();
-    let month = today.getMonth() + 1;
-    let year = today.getFullYear();
-    let hours = today.getHours();
-    let minutes = today.getMinutes();
-
-    if (day < 10) {
-        day = '0' + day;
-    }
-
-    if (month < 10) {
-        month = '0' + month;
-    }
-
-    today = `${day}/${month}/${year} - ${hours}:${minutes}h`;
-
-    return today;
-}
-
-let categoryId = (function () {
-    let id = 0;
-
-    function next() {
-        id += 1;
-        return id;
-    }
-    return {
-        next: next
-    };
-})();
 
 export {
     CategoryFile

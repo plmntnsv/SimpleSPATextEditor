@@ -19,7 +19,31 @@ function getDate() {
     return today;
 }
 
-let idGenerator = (function () {
+let fileIdGenerator = (function () {
+    let id = 0;
+
+    function next() {
+        id += 1;
+        return id;
+    }
+    return {
+        next: next
+    };
+})();
+
+let categoryIdGenerator = (function () {
+    let id = 0;
+
+    function next() {
+        id += 1;
+        return id;
+    }
+    return {
+        next: next
+    };
+})();
+
+let userIdGenerator = (function () {
     let id = 0;
 
     function next() {
@@ -33,5 +57,7 @@ let idGenerator = (function () {
 
 export {
     getDate,
-    idGenerator
+    fileIdGenerator,
+    categoryIdGenerator,
+    userIdGenerator
 }

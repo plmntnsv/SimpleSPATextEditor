@@ -9,6 +9,7 @@ SystemJS.config({
   'data' : 'scripts/data.js',
   'requester' : 'scripts/requester.js',
   'templateLoader' : 'scripts/template-loader.js',
+  // controllers
   'documentController' : 'scripts/controllers/document-controller.js',
   'categoriesController' : 'scripts/controllers/categories-controller.js',
   'logInController' : 'scripts/controllers/log-in-controller.js',
@@ -16,10 +17,13 @@ SystemJS.config({
   'registerController' : 'scripts/controllers/register-controller.js',
   'profileController': 'scripts/controllers/profile-controller.js',
   'sortesController': 'scripts/controllers/sortes-controller.js',
+  // classes
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',
+  // app functionality
   'documentFunctionality': 'scripts/document-functionality.js',
   'savedFilesFunctionality': 'scripts/saved-files-functionality.js',
+  'utils': 'scripts/utils.js',
  }
 });
 
