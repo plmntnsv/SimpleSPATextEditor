@@ -69,3 +69,7 @@ main > section:last-of-type {
 .search-result {
     background-color: lightblue;
 }
+
+#register-form{
+    width: 200px;
+}

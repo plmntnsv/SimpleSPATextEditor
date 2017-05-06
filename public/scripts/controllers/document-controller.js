@@ -1,5 +1,5 @@
 import { templateLoader } from 'templateLoader';
-import * as documentFunctionality from 'documentFunctionality';
+import * as documentLogic from 'documentLogic';
 import * as data from 'data';
 
 let $contentContainer = $("#contents-container");
@@ -14,6 +14,6 @@ export function get() {
                     let theCompiledHtml = html(files);
                     $contentContainer.html(theCompiledHtml);
                  })
-                 .then(() => documentFunctionality.init());
+                 .then(() => documentLogic.init());
         });
 }

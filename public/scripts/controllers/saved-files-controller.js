@@ -1,6 +1,6 @@
 import { templateLoader } from 'templateLoader';
 import * as data from 'data';
-import * as savedFilesFunctionality from 'savedFilesFunctionality';
+import * as savedFilesLogic from 'savedFilesLogic';
 
 export function get(category) {
     templateLoader.get('saved-files')
@@ -13,6 +13,6 @@ export function get(category) {
                     let theCompiledHtml = html(files);
                     $contentContainer.html(theCompiledHtml);
                 })
-                .then(() => savedFilesFunctionality.savedFilesInit());
+                .then(() => savedFilesLogic.savedFilesInit());
         });
 }

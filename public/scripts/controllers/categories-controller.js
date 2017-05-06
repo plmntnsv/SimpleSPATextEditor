@@ -1,6 +1,6 @@
 import { templateLoader } from 'templateLoader';
 import * as data from 'data';
-import * as savedFilesFunctionality from 'savedFilesFunctionality';
+import * as savedFilesLogic from 'savedFilesLogic';
 
 let $contentContainer = $("#contents-container");
 
@@ -14,6 +14,6 @@ export function get() {
                     let theCompiledHtml = html(categories);
                     $contentContainer.html(theCompiledHtml);
                  })
-                 .then(() => savedFilesFunctionality.categoryFilesInit());
+                 .then(() => savedFilesLogic.categoryFilesInit());
         });
 }

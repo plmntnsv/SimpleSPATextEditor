@@ -89,10 +89,11 @@ export function init() {
         let category;
 
         if (name === "") {
+            alert("Name cannot be empty!");
             return;
         }
 
-        // if no new category is provided the file is saved to the DB for the selected category else creates new category and save it there
+        // if no new category is provided the file is saved to the DB for the selected category else creates new category and saves it there
         if (newCategoryName === "") {
             categoryName = $chooseCategory.val();
             let newFile = new DocumentFile(name, "anonymous", categoryName, textAreaContent);

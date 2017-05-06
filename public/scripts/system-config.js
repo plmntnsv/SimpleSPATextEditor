@@ -23,8 +23,9 @@ SystemJS.config({
   'user' : 'scripts/user.js',
   'admin' : 'scripts/admin-user.js',
   // app functionality
-  'documentFunctionality': 'scripts/document-functionality.js',
-  'savedFilesFunctionality': 'scripts/saved-files-functionality.js',
+  'documentLogic': 'scripts/document-logic.js',
+  'savedFilesLogic': 'scripts/saved-files-logic.js',
+  'registerLogic' : 'scripts/register-logic.js',
   'utils': 'scripts/utils.js',
  }
 });

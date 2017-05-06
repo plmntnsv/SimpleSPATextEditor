@@ -1,9 +1,8 @@
 import * as utils from "utils";
 
 class User {
-    constructor(name, password, email, country) {
+    constructor(name, email, country) {
         this.name = name;
-        this.password = password;
         this.email = email;
         this.country = country;
         this.role = "user";
@@ -24,13 +23,6 @@ class User {
         }
 
         this._name = name;
-    }
-
-    get password() {
-        return this._name;
-    }
-    set password(pass) {
-        this._password = pass;
     }
 
     get email() {
