@@ -26,6 +26,7 @@ SystemJS.config({
   'documentLogic': 'scripts/document-logic.js',
   'savedFilesLogic': 'scripts/saved-files-logic.js',
   'registerLogic' : 'scripts/register-logic.js',
+  'loginLogic' : 'scripts/log-in-logic.js',
   'utils': 'scripts/utils.js',
  }
 });

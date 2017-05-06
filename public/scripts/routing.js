@@ -1,4 +1,3 @@
-//import { templateLoader } from './template-loader.js';
 import * as documentController from 'documentController';
 import * as savedFilesController from 'savedFilesController';
 import * as categoriesController from 'categoriesController';
@@ -16,7 +15,6 @@ const router = (() => {
   function init(params) {
     router = new Navigo(root, useHash, hash);
 
-    // Implement routing logic here
     router
       .on(() => { router.navigate("#/document"); })
       .on('/document', () => { documentController.get(); })
@@ -39,7 +37,5 @@ const router = (() => {
     init
   }
 })();
-
-
 
 export { router };

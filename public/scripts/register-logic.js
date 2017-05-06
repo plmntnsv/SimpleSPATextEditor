@@ -4,12 +4,12 @@ import {
 import * as data from 'data';
 
 export function init() {
-    var $registerBtn = $("#register-btn");
-    var $enterPasswordField = $("#enter-password");
-    var $repeatPasswordField = $("#repeat-password");
-    var $enterUsername = $("#enter-username");
-    var $chooseCountry = $("#choose-country");
-    var $enterEmail = $("#enter-email");
+    let $registerBtn = $("#register-btn");
+    let $enterPasswordField = $("#enter-password");
+    let $repeatPasswordField = $("#repeat-password");
+    let $enterUsername = $("#enter-username");
+    let $chooseCountry = $("#choose-country");
+    let $enterEmail = $("#enter-email");
 
     $registerBtn.on("click", function () {
         if ($enterPasswordField.val() !== $repeatPasswordField.val()) {
@@ -44,9 +44,26 @@ export function init() {
         let newUser = new User(userName, email, country);
 
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(`${errorCode} - ${errorMessage}`);
-        });
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                alert(`${errorCode} - ${errorMessage}`);
+            })
+            .then(function () {
+                var user = firebase.auth().currentUser;
+                user.updateProfile({
+                    displayName: userName
+                }).then(function () {
+                    console.log("successfully updated profile");
+                }, function (error) {
+                    console.log(error);
+                });
+            })
+            .then(function () {
+                location.hash = "/document";
+                $("#nav-register").addClass("hidden");
+                $("#nav-log-in").addClass("hidden");
+                $("#nav-log-out").removeClass("hidden");
+                $("#nav-profile").removeClass("hidden");
+            });
     });
 }
