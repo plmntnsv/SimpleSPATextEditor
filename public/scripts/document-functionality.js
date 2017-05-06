@@ -21,18 +21,18 @@ export function init() {
     let $underLineBtn = $(".underline-btn");
 
     let searchContent;
-    //let selectedText;
 
     $txtArea.focus();
 
-    if ($previewPanel.text().length > 0) {
-        $txtArea.html($previewPanel.html());
+    if (sessionStorage.getItem("currentDoc")) {
+        $txtArea.html(sessionStorage.getItem("currentDoc"));
         $saveFileBtn.removeAttr('disabled');
         $clearBtn.removeAttr('disabled');
     }
 
     $txtArea.on("input", function () {
         $previewPanel.html($txtArea.html());
+        sessionStorage.setItem("currentDoc", $txtArea.html());
         if ($txtArea.text().length <= 0) {
             $saveFileBtn.attr('disabled', 'disabled');
             $clearBtn.attr('disabled', 'disabled');
