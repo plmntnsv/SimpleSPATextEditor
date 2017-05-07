@@ -1,23 +1,37 @@
-function getDate() {
-    let today = new Date();
-    let day = today.getDate();
-    let month = today.getMonth() + 1;
-    let year = today.getFullYear();
-    let hours = today.getHours();
-    let minutes = today.getMinutes();
+let date = (function() {
+    function getDate(params) {
+        let today = new Date();
+        let day = today.getDate();
+        let month = today.getMonth() + 1;
+        let year = today.getFullYear();
+        let hours = today.getHours();
+        let minutes = today.getMinutes();
 
-    if (day < 10) {
-        day = '0' + day;
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+
+         if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        if (day < 10) {
+            day = "0" + day;
+        }
+
+        if (month < 10) {
+            month = "0" + month;
+        }
+
+        today = `${day}/${month}/${year} - ${hours}:${minutes}h`;
+
+        return today;
     }
-
-    if (month < 10) {
-        month = '0' + month;
+    
+    return {
+        getDate
     }
-
-    today = `${day}/${month}/${year} - ${hours}:${minutes}h`;
-
-    return today;
-}
+})();
 
 let fileIdGenerator = (function () {
     let id = 0;
@@ -56,7 +70,7 @@ let userIdGenerator = (function () {
 })();
 
 export {
-    getDate,
+    date,
     fileIdGenerator,
     categoryIdGenerator,
     userIdGenerator

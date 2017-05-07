@@ -22,7 +22,7 @@ export function savedFilesInit() {
     $previewButtons.on("click", function () {
         let fileName = $(this).attr("name");
         let categoryName = $categorySelect.val();
-        data.getSavedFile(fileName, categoryName).then((snap) => $displayPreview.html(snap.val()._content));
+        data.getSavedFile(fileName, categoryName).then((snap) => { $displayPreview.html(snap.val()._content); });
     });
 
     $deleteButtons.on("click", function () {
@@ -40,7 +40,7 @@ export function savedFilesInit() {
         let fileName = $this.attr("name");
         let categoryName = $categorySelect.val();
         let $selectedConformationForm = $conformationForms.filter('[name="'+fileName+'"]');
-        $selectedConformationForm.closest("div").remove();
+        $selectedConformationForm.closest("section").remove();
 
         data.getSavedFile(fileName, categoryName).then((snap) => data.deleteFile(fileName, categoryName));
     });

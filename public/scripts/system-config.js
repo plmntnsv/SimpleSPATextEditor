@@ -20,6 +20,7 @@ SystemJS.config({
   'loggedOutNavController': 'scripts/controllers/logged-out-nav-controller.js',
   'homeController': 'scripts/controllers/home-controller.js',
   // classes
+  'workFile': 'scripts/work-file.js',
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',
   'user' : 'scripts/user.js',

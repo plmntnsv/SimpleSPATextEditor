@@ -10,8 +10,12 @@ export function get(category) {
             let context = data.getSavedFiles(category)
                 .then(function (snapshot) {
                     let files = snapshot.val();
-                    let theCompiledHtml = html(files);
-                    $contentContainer.html(theCompiledHtml);
+                    if (files.files) {
+                        let theCompiledHtml = html(files);
+                        $contentContainer.html(theCompiledHtml);
+                    } else {
+                        $contentContainer.html("No files in that category yet.");
+                    }
                 })
                 .then(() => savedFilesLogic.savedFilesInit());
         });

@@ -6,7 +6,7 @@ class User {
         this.email = email;
         this.country = country;
         this.role = "user";
-        this.createdOn = utils.getDate();
+        this.createdOn = utils.date.getDate();
         this.id = utils.userIdGenerator.next();
     }
 

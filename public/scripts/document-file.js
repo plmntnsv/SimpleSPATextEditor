@@ -1,28 +1,10 @@
-import * as utils from "utils";
+import { WorkFile } from "workFile";
 
-class DocumentFile {
+class DocumentFile extends WorkFile {
     constructor(name, author, category, content) {
-        this.name = name;
+        super(name, author);
         this.category = category;
-        this.author = author;
         this.content = content;
-        this.createdOn = utils.getDate();
-        this.id = utils.fileIdGenerator.next();
-    }
-
-    get name() {
-        return this._name;
-    }
-    set name(documentName) {
-        if (!documentName) {
-            throw "Document name cannot be null";
-        }
-
-        if (documentName.length === 0) {
-            throw "Document name cannot be empty";
-        }
-
-        this._name = documentName;
     }
 
     get category() {
@@ -38,15 +20,6 @@ class DocumentFile {
     set content(c) {
         this._content = c;
     }
-
-    get author() {
-        return this._author;
-    }
-    set author(a) {
-        this._author = a;
-    }
 }
 
-export {
-    DocumentFile
-};
+export { DocumentFile };
