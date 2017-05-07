@@ -11,14 +11,11 @@ export function init() {
     $logInBtn.on("click", function () {
         let email = $logInEmail.val();
         let password = $logInPassword.val();
-        loggedInNavController.get();
-        router.destroy();
-        router.loggedInInit();
-        location.hash = "/profile";
-        // firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        //     let errorCode = error.code;
-        //     let errorMessage = error.message;
-        //     alert(`${errorCode} - ${errorMessage}`);
-        // });
+        
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            alert(`${errorCode} - ${errorMessage}`);
+        });
     });
 }

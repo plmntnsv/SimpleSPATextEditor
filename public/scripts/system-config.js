@@ -17,6 +17,7 @@ SystemJS.config({
   'profileController': 'scripts/controllers/profile-controller.js',
   'sortesController': 'scripts/controllers/sortes-controller.js',
   'loggedInNavController': 'scripts/controllers/logged-in-nav-controller.js',
+  'loggedOutNavController': 'scripts/controllers/logged-out-nav-controller.js',
   // classes
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',
@@ -27,6 +28,7 @@ SystemJS.config({
   'savedFilesLogic': 'scripts/saved-files-logic.js',
   'registerLogic' : 'scripts/register-logic.js',
   'loginLogic' : 'scripts/log-in-logic.js',
+  'logoutLogic' : 'scripts/log-out-logic.js',
   'utils': 'scripts/utils.js',
  }
 });

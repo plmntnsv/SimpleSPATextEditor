@@ -16,28 +16,12 @@ export function init() {
     let $enterEmail = $("#enter-email");
 
     $registerBtn.on("click", function () {
-        loggedInNavController.get();
-        router.destroy();
-        router.loggedInInit();
-        location.hash = "/profile";
-        if ($enterPasswordField.val() !== $repeatPasswordField.val()) {
-            alert("Passwords are not equal.");
-        } else if ($enterPasswordField.val() === "") {
-            alert("Password cannot be empty.");
-        } else if ($enterUsername.val() === "") {
-            alert("Username cannot be empty.");
-        } else if ($enterEmail.val() === "") {
-            alert("E-mail cannot be empty.");
-        } else if ($chooseCountry.val() === "None") {
-            alert("Please choose a country.");
-        } else if ($enterEmail.val().indexOf('@') === -1) {
-            alert("E-mail is not valid.");
-        } else {
-            let userName = $enterUsername.val()
-            let password = $enterPasswordField.val();
-            let email = $enterEmail.val();
-            let country = $chooseCountry.val();
+        let userName = $enterUsername.val();
+        let password = $enterPasswordField.val();
+        let email = $enterEmail.val();
+        let country = $chooseCountry.val();
 
+        if (validate()) {
             let newUser = new User(userName, email, country);
 
             firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
@@ -60,4 +44,38 @@ export function init() {
                 });
         }
     });
+
+    function validate() {
+        if ($enterPasswordField.val() !== $repeatPasswordField.val()) {
+            alert("Passwords are not equal.");
+            return false;
+        }
+
+        if ($enterPasswordField.val() === "") {
+            alert("Password cannot be empty.");
+            return false;
+        }
+
+        if ($enterUsername.val() === "") {
+            alert("Username cannot be empty.");
+            return false;
+        }
+
+        if ($enterEmail.val() === "") {
+            alert("E-mail cannot be empty.");
+            return false;
+        }
+
+        if ($chooseCountry.val() === "None") {
+            alert("Please choose a country.");
+            return false;
+        }
+
+        if ($enterEmail.val().indexOf('@') === -1) {
+            alert("E-mail is not valid.");
+            return false;
+        }
+
+        return true;
+    }
 }

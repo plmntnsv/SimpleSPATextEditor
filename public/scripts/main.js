@@ -1,16 +1,21 @@
 import { router } from 'router';
+import * as loggedInNavController from 'loggedInNavController';
+import * as loggedOutNavController from 'loggedOutNavController';
 
-router.loggedOutInit();
-
-// firebase.auth().onAuthStateChanged(function(user) {
-//         if (user) {
-//           var displayName = user.displayName;
-//           var email = user.email;
-//           $("#nav-register").addClass("hidden");
-//                 $("#nav-log-in").addClass("hidden");
-//                 $("#nav-log-out").removeClass("hidden");
-//                 $("#nav-profile").removeClass("hidden");
-//         } else {
-//           console.log('no logged user');
-//         }
-// });
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        let displayName = user.displayName;
+        let email = user.email;
+        console.log(displayName + ' logged in.');
+        loggedInNavController.get();
+        location.hash = "/profile"; 
+        router.destroy();
+        router.loggedInInit();
+    } else {
+        console.log("no logged user.");
+        loggedOutNavController.get();        
+        location.hash = "/log-in";         
+        router.destroy();        
+        router.loggedOutInit();
+    }
+});

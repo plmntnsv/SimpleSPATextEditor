@@ -5,6 +5,7 @@ import * as sortesController from 'sortesController';
 import * as profileController from 'profileController';
 import * as logInController from 'logInController';
 import * as registerController from 'registerController';
+import * as logoutLogic from "logoutLogic";
 
 const router = (() => {
   const root = null;
@@ -22,7 +23,11 @@ const router = (() => {
   }
 
   function destroy() {
-    router.destroy;
+    if (router) {
+      router.destroy();
+    } else {
+      console.log("there is no routing to be destroyed.");
+    }
   }
 
   function loggedInInit() {
@@ -41,6 +46,7 @@ const router = (() => {
       // })
       .on('/sortes', () => { sortesController.get(); })
       .on('/profile', () => { profileController.get(); })
+      .on('/log-out', () => { logoutLogic.init(); })
       .resolve();
   }
 
