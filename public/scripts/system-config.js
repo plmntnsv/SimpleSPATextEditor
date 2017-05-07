@@ -18,6 +18,7 @@ SystemJS.config({
   'sortesController': 'scripts/controllers/sortes-controller.js',
   'loggedInNavController': 'scripts/controllers/logged-in-nav-controller.js',
   'loggedOutNavController': 'scripts/controllers/logged-out-nav-controller.js',
+  'homeController': 'scripts/controllers/home-controller.js',
   // classes
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',

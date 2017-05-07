@@ -11,7 +11,6 @@ export function init() {
     let $saveContainer = $(".save-window");
     let $clearBtn = $("#clear-btn");
     let $txtArea = $("#txt-area");
-    let $previewPanel = $("#preview-panel");
     let $fileNameInput = $("#file-name");
 
     let $fontFamilySelect = $("#font-family-select");
@@ -32,7 +31,6 @@ export function init() {
     }
 
     $txtArea.on("input", function () {
-        $previewPanel.html($txtArea.html());
         sessionStorage.setItem("currentDoc", $txtArea.html());
         if ($txtArea.text().length <= 0) {
             $saveFileBtn.attr('disabled', 'disabled');
@@ -110,7 +108,6 @@ export function init() {
             data.postCategory(category, newFile);
         }
 
-        $previewPanel.html(textAreaContent);
         $createCategoryName.val("");
         newCategoryName = $createCategoryName.val();
         $fileNameInput.val("");
@@ -126,7 +123,6 @@ export function init() {
         $saveFileBtn.attr('disabled', 'disabled');
         $clearBtn.attr('disabled', 'disabled');
         $txtArea.html('');
-        $previewPanel.html('');
     });
 
     // text decoration events below
@@ -146,17 +142,13 @@ export function init() {
         let family = $(this).val();
         let text = $txtArea.html();
         $txtArea.css("font-family", family);
-        $previewPanel.css("font-family", family);
         $txtArea.html(text);
-        $previewPanel.html(text);
     });
 
     $fontSizeSelect.change(function () {
         let size = $(this).val();
         let text = $txtArea.html();
         $txtArea.css("font-size", `${size}px`);
-        $previewPanel.css("font-size", `${size}px`);
         $txtArea.html(text);
-        $previewPanel.html(text);
     });
 }
