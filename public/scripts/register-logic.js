@@ -35,6 +35,7 @@ export function init() {
                     }).then(function () {
                         let $sideInfo = $("#side-info");
                         $sideInfo.html(`Hello, ${user.displayName}!`);
+                        sessionStorage.setItem("userLogged", "true");
                         console.log(user.displayName + ' registered successfully.');
 
                         let mainCategory = new CategoryFile("Main", "Admin");

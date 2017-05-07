@@ -20,6 +20,7 @@ export function init() {
             let user = firebase.auth().currentUser;
             let $sideInfo = $("#side-info");
             $sideInfo.html(`Hello, ${user.displayName}!`);
+            sessionStorage.setItem("userLogged", "true");
             console.log(user.displayName + ' successfully logged-in.');
         });
     });

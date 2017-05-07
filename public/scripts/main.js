@@ -3,17 +3,22 @@ import * as loggedInNavController from 'loggedInNavController';
 import * as loggedOutNavController from 'loggedOutNavController';
 
 let $sideInfo = $("#side-info");
+let loggedUser = sessionStorage.getItem('userLogged');
+if (!loggedUser) {
+    firebase.auth().signOut().then(function() {
+        sessionStorage.removeItem("currentDoc");
+    }).catch(function(error) {
+  alert(error.message);
+});
+}
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        let displayName = user.displayName;
-        let email = user.email;
-        //console.log(displayName + ' logged in.');
+        console.log("a user logged-in.");
         loggedInNavController.get();
         location.hash = "/profile"; 
         router.destroy();
         router.loggedInInit();
-        //$sideInfo.html(`Hello, ${displayName}!`);
     } else {
         console.log("no logged user.");
         loggedOutNavController.get();        
