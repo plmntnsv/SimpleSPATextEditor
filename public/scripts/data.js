@@ -40,10 +40,22 @@ export function postCategory(category, file) {
     return firebase.database().ref().update(updates);
 }
 
-export function postUser(params) {
-
+export function postUser(newUser) {
+    let user = firebase.auth().currentUser;
+    let url = `/data/users/${user.uid}`;
+    let updates = {};
+    updates[url] = newUser;
+    return firebase.database().ref().update(updates);
 }
 
-export function getUsers(params) {
+export function getUser() {
+    let user = firebase.auth().currentUser;
+    let url = `/data/users/${user.uid}`;
+    let result = firebase.database().ref(url).once('value');
+    return result;
+}
 
+export function getUsers() {
+    let url = `/data/users/`;
+    return firebase.database().ref(url).once('value');
 }

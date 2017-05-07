@@ -36,8 +36,17 @@ main > ul {
     margin-left: 25px;
 }
 
-main > section:last-of-type {
+/*main > section:last-of-type {
     height: 80%;
+}*/
+
+#section-textarea {
+    height: 80%;
+}
+
+#profile-info-section, #profile-pic-section {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #txt-area {

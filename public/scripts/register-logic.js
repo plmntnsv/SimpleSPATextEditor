@@ -43,7 +43,7 @@ export function init() {
                         let greetingFile = new DocumentFile("Hello", "Admin", mainCategory._name, text);
 
                         data.postCategory(mainCategory, greetingFile).then(() => {console.log('successfully posted main file');});
-                        
+                        data.postUser(newUser);
                     }, function (error) {
                         console.log(error);
                     }).then(function () {

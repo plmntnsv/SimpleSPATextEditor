@@ -30,6 +30,7 @@ SystemJS.config({
   'registerLogic' : 'scripts/register-logic.js',
   'loginLogic' : 'scripts/log-in-logic.js',
   'logoutLogic' : 'scripts/log-out-logic.js',
+  'profileLogic' : 'scripts/profile-logic.js',
   'utils': 'scripts/utils.js',
  }
 });

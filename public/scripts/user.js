@@ -26,14 +26,14 @@ class User {
     }
 
     get email() {
-        return this._content;
+        return this._email;
     }
     set email(mail) {
         this._email = mail;
     }
 
     get country() {
-        return this._author;
+        return this._country;
     }
     set country(country) {
         this._country = country;

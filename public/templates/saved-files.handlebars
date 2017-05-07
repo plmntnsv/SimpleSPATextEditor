@@ -1,5 +1,5 @@
 {{#each files}}
-<div>
+<section>
     <p>"{{_name}}" by {{_author}} in "{{_category}}" category - {{createdOn}}</p>
     <form action="">
         <input class="preview-btn" name="{{_name}}" type="button" value="Preview">
@@ -10,5 +10,5 @@
         <input class="yes-btn" name="{{_name}}" type="button" value="Yes">
         <input class="no-btn" name="{{_name}}" type="button" value="No">
     </form>
-</div>
+</section>
 {{/each}}
