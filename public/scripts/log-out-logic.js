@@ -5,6 +5,6 @@ export function init() {
     firebase.auth().signOut().then(function() {
         console.log(user.displayName + ' logged out successfully');
     }).catch(function(error) {
-  console.log(error);
+  alert(error.message);
 });
 }

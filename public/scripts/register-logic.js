@@ -1,11 +1,9 @@
-import {
-    User
-} from "user";
+import { User } from "user";
 import * as data from 'data';
 import * as loggedInNavController from 'loggedInNavController';
-import {
-    router
-} from 'router';
+import { router } from 'router';
+import { DocumentFile } from 'documentFile';
+import { CategoryFile } from 'categoryFile';
 
 export function init() {
     let $registerBtn = $("#register-btn");
@@ -24,23 +22,32 @@ export function init() {
         if (validate()) {
             let newUser = new User(userName, email, country);
 
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .catch(function (error) {
                     let errorCode = error.code;
                     let errorMessage = error.message;
                     alert(`${errorCode} - ${errorMessage}`);
                 })
                 .then(function () {
-                    var user = firebase.auth().currentUser;
+                    let user = firebase.auth().currentUser;
                     user.updateProfile({
                         displayName: userName
                     }).then(function () {
-                        console.log("successfully updated profile");
+                        let $sideInfo = $("#side-info");
+                        $sideInfo.html(`Hello, ${user.displayName}!`);
+                        console.log(user.displayName + ' registered successfully.');
+
+                        let mainCategory = new CategoryFile("Main", "Admin");
+                        let text = "This is your default category. Feel free to add, delete, preview and share files here or you can create your own categories.";
+                        let greetingFile = new DocumentFile("Hello", "Admin", mainCategory._name, text);
+
+                        data.postCategory(mainCategory, greetingFile).then(() => {console.log('successfully posted main file');});
+                        
                     }, function (error) {
                         console.log(error);
+                    }).then(function () {
+                        console.log("successfully finalized profile");
                     });
-                })
-                .then(function () {
-                    //location.hash = "/document";
                 });
         }
     });

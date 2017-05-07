@@ -21,6 +21,7 @@ export function init() {
     let $underLineBtn = $(".underline-btn");
 
     let searchContent;
+    let user = firebase.auth().currentUser;
 
     $txtArea.focus();
 
@@ -92,18 +93,19 @@ export function init() {
             alert("Name cannot be empty!");
             return;
         }
-
+        let author = user.displayName;
         // if no new category is provided the file is saved to the DB for the selected category else creates new category and saves it there
         if (newCategoryName === "") {
             categoryName = $chooseCategory.val();
-            let newFile = new DocumentFile(name, "anonymous", categoryName, textAreaContent);
+            
+            let newFile = new DocumentFile(name, author, categoryName, textAreaContent);
             data.postSaveFile(categoryName, newFile);
         } else {
             categoryName = $createCategoryName.val();
             let $newOption = $(`<option value="${categoryName}">${categoryName}</option>`);
             $newOption.appendTo($chooseCategory);
-            category = new CategoryFile(categoryName, "anonymous");
-            let newFile = new DocumentFile(name, "anonymous", category._name, textAreaContent);
+            category = new CategoryFile(categoryName, author);
+            let newFile = new DocumentFile(name, author, category._name, textAreaContent);
 
             data.postCategory(category, newFile);
         }

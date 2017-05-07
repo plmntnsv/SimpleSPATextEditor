@@ -16,6 +16,11 @@ export function init() {
             let errorCode = error.code;
             let errorMessage = error.message;
             alert(`${errorCode} - ${errorMessage}`);
+        }).then(function () {
+            let user = firebase.auth().currentUser;
+            let $sideInfo = $("#side-info");
+            $sideInfo.html(`Hello, ${user.displayName}!`);
+            console.log(user.displayName + ' successfully logged-in.');
         });
     });
 }

@@ -4,6 +4,8 @@ import {
 import * as data from 'data';
 import * as savedFilesController from 'savedFilesController';
 
+
+
 export function categoryFilesInit() {
     let $categorySelect = $("#show-category");
     $categorySelect.change(function () {
