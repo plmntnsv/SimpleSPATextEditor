@@ -12,7 +12,20 @@ const router = (() => {
   const hash = '#';
   let router;
 
-  function init(params) {
+  function loggedOutInit() {
+    router = new Navigo(root, useHash, hash);
+
+    router
+      .on('/log-in',  () => { logInController.get(); })
+      .on('/register', () => { registerController.get(); })
+      .resolve();
+  }
+
+  function destroy() {
+    router.destroy;
+  }
+
+  function loggedInInit() {
     router = new Navigo(root, useHash, hash);
 
     router
@@ -28,13 +41,13 @@ const router = (() => {
       // })
       .on('/sortes', () => { sortesController.get(); })
       .on('/profile', () => { profileController.get(); })
-      .on('/log-in',  () => { logInController.get(); })
-      .on('/register', () => { registerController.get(); })
       .resolve();
   }
 
   return {
-    init
+    loggedOutInit,
+    destroy,
+    loggedInInit
   }
 })();
 

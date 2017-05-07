@@ -7,7 +7,6 @@ SystemJS.config({
   'main': 'scripts/main.js',
   'router' : 'scripts/routing.js',
   'data' : 'scripts/data.js',
-  'requester' : 'scripts/requester.js',
   'templateLoader' : 'scripts/template-loader.js',
   // controllers
   'documentController' : 'scripts/controllers/document-controller.js',
@@ -17,6 +16,7 @@ SystemJS.config({
   'registerController' : 'scripts/controllers/register-controller.js',
   'profileController': 'scripts/controllers/profile-controller.js',
   'sortesController': 'scripts/controllers/sortes-controller.js',
+  'loggedInNavController': 'scripts/controllers/logged-in-nav-controller.js',
   // classes
   'documentFile': 'scripts/document-file.js',
   'categoryFile': 'scripts/category-file.js',

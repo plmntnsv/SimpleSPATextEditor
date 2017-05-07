@@ -16,19 +16,13 @@
         <header>
             <h1>Team-Harpy-Text-Editor</h1>
         </header>
-        <nav>Navigation
+        <nav id="main-nav">Navigation
             <ul>
-                <!--Add here the paths to all the pages and then add them to routing.js-->
-                <li><a href="#/document">Document</a></li>
-                <li><a href="#/saved-files">Saved files</a></li>
-                <li id="nav-profile" class="hidden"><a href="#/profile">Profile</a></li>
-                <li><a href="#/sortes">Sortes</a></li>
                 <li id="nav-log-in"><a href="#/log-in">Log-in</a></li>
                 <li id="nav-register"><a href="#/register">Register</a></li>
-                <li id="nav-log-out" class="hidden"><a href="#/log-out">Log-out</a></li>
             </ul>
         </nav>
-        <aside id="side">Aside</aside>
+        <aside id="side">Please log-in or register.</aside>
         <!--Everything from the templates is generated here-->
         <main id="contents-container"></main>
         <footer>
@@ -52,12 +46,12 @@
     <script src="./node_modules/systemjs/dist/system.js"></script>
     <script src="./scripts/system-config.js"></script>
     <script src="./scripts/prophecy.js"></script>
-    
+
     <!--External libraries-->
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/handlebars/dist/handlebars.js"></script>
     <script src="./node_modules/navigo/lib/navigo.js"></script>
-    
+
     <!--Firebase initialization-->
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>

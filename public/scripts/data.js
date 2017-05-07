@@ -1,5 +1,3 @@
-import { requester } from 'requester';
-
 export function getSavedFiles(categoryName) {
     let url = `/saved-files/data/categories/${categoryName}`;
     return firebase.database().ref(url).once('value');

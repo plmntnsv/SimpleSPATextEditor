@@ -16,6 +16,10 @@ footer, header, nav, aside, section, main {
     padding: 5px;
 }
 
+header {
+    text-align: center;
+}
+
 a:link, a:visited {
     color: black;
     text-decoration: none;
