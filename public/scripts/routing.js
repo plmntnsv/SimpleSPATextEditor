@@ -39,10 +39,9 @@ const router = (() => {
 
   function loggedInInit() {
     router = new Navigo(root, useHash, hash);
-    let $contentContainer = $("#display-public-panel");
 
     router
-      .on(() => { router.navigate("#/document"); })
+      //.on(() => { router.navigate("#/document"); })
       .on('/document', () => { documentController.get(); })
       .on('/saved-files', () => { categoriesController.get(); })
       .on('/public', () => { publicTabController.get(); })

@@ -17,14 +17,14 @@ firebase.auth().onAuthStateChanged(function (user) {
         console.log("a user logged-in.");
         let name = user.displayName;
         loggedInNavController.get();
-        location.hash = "/profile";
+        //location.hash = "/profile";
         $sideInfo.html(`Hello, ${name}!`);
         router.destroy();
         router.loggedInInit();
     } else {
         console.log("no logged user.");
         loggedOutNavController.get();
-        location.hash = "/home";
+        //location.hash = "/home";
         router.destroy();
         router.loggedOutInit();
         $sideInfo.html(`Please log-in or register.`);

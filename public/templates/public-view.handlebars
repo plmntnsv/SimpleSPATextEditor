@@ -1,8 +1,31 @@
+<meta property="og:url" content="https://team-harpy-text-editor-e059c.firebaseapp.com/#/public/{{this._name}}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{this._name}}" />
+<meta property="og:description" content="By {{this._author}} - {{this.createdOn}}" />
+
 <article>
     <header id="art-header">
-    <h3 id="art-title">{{this._name}}</h3>
-    <p id="art-info"><em>By {{this._author}} - {{this.createdOn}}</em></p>
+        <h3 id="art-title">{{this._name}}</h3>
+        <p id="art-info"><em>By {{this._author}} - {{this.createdOn}}</em></p>
     </header>
     <p id="art-text">{{this._content}}</p>
-    <footer d="art-footer-share"></footer>
+    <footer d="art-footer-share">
+        <script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-share-button" data-href="https://team-harpy-text-editor-e059c.firebaseapp.com/#/public/{{this._name}}" data-layout="button"
+    data-size="large" data-mobile-iframe="true">
+    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fteam-harpy-text-editor-e059c.firebaseapp.com%2F%23%2Fpublic%2F{{this._name}}&amp;src=sdkpreparse">
+        Share
+        </a>
+</div>
+    </footer>
 </article>
