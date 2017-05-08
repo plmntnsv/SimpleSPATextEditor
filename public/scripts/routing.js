@@ -7,6 +7,7 @@ import * as logInController from 'logInController';
 import * as registerController from 'registerController';
 import * as logoutLogic from "logoutLogic";
 import * as homeController from "homeController";
+import * as publicTabController from "publicTabController";
 
 const router = (() => {
   const root = null;
@@ -22,6 +23,7 @@ const router = (() => {
       .on('/home',  () => { homeController.get(); })
       .on('/log-in',  () => { logInController.get(); })
       .on('/register', () => { registerController.get(); })
+      .on('/public', () => { publicTabController.get(); })
       .resolve();
   }
 
@@ -40,13 +42,14 @@ const router = (() => {
       .on(() => { router.navigate("#/document"); })
       .on('/document', () => { documentController.get(); })
       .on('/saved-files', () => { categoriesController.get(); })
-      //.on('/categories', () => { categoriesController.get(); })
-      // .on('/saved-files/:id', function (file) {
-      //   Promise.all([savedFiles.getById(file.id), templateLoader.get('/doc-file')])
-      //   .then(([data, template]) => {
-      //     $contentContainer.append(template(data));
-      //   });
-      // })
+      .on('/public', () => { publicTabController.get(); })
+      .on('/public/:name', function (doc) {
+        console.log(doc.name);
+        // Promise.all([data.getById(file.id), templateLoader.get('/doc-file')])
+        // .then(([data, template]) => {
+        //   $contentContainer.append(template(data));
+        //});
+      })
       .on('/sortes', () => { sortesController.get(); })
       .on('/profile', () => { profileController.get(); })
       .on('/log-out', () => { logoutLogic.init(); })

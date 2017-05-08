@@ -4,7 +4,8 @@
     <form action="">
         <input class="preview-btn" name="{{_name}}" type="button" value="Preview">
         <input class="delete-btn" name="{{_name}}" type="button" value="Delete">
-        <input class="share-btn g-plus" data-action="share" type="button" value="Share">
+        <input class="make-public-btn" name="{{_name}}" type="button" {{#if isPublic}} value="File is public" disabled="disabled" {{else}} value="Make public" {{/if}}>
+        <p>{{isPublic}}</p>
     </form>
     <form action="" class="conformation-form hidden" name="{{_name}}">
         <input class="yes-btn" name="{{_name}}" type="button" value="Yes">

@@ -5,6 +5,7 @@ class DocumentFile extends WorkFile {
         super(name, author);
         this.category = category;
         this.content = content;
+        this.isPublic = false;
     }
 
     get category() {

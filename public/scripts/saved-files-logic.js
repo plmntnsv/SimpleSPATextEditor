@@ -14,6 +14,7 @@ export function savedFilesInit() {
     let $categorySelect = $("#show-category");    
     let $previewButtons = $(".preview-btn");
     let $deleteButtons = $(".delete-btn");
+    let $makePublicButtons = $(".make-public-btn");
     let $displayPreview = $("#display-perview");
     let $conformationForms = $(".conformation-form");
     let $yesBtn = $(".yes-btn");
@@ -23,6 +24,17 @@ export function savedFilesInit() {
         let fileName = $(this).attr("name");
         let categoryName = $categorySelect.val();
         data.getSavedFile(fileName, categoryName).then((snap) => { $displayPreview.html(snap.val()._content); });
+    });
+
+     $makePublicButtons.on("click", function () {
+        let fileName = $(this).attr("name");
+        let categoryName = $categorySelect.val();
+        data.getSavedFile(fileName, categoryName).then((snap) => { 
+            let file = snap.val();
+            file.isPublic = true;
+            data.postSaveFile(categoryName, file);            
+            data.postPublicFile(file);
+        }).then(()=> { console.log('successfully posted to public.' );});
     });
 
     $deleteButtons.on("click", function () {

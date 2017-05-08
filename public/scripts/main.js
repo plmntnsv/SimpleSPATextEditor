@@ -10,11 +10,7 @@ if (!loggedUser) {
     }).catch(function (error) {
         alert(error.message);
     });
-} //else {
-//     let name = sessionStorage.getItem("userLogged");
-//     console.log(name);
-//     //$sideInfo.html(`Hello, ${name}`);
-// }
+}
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {

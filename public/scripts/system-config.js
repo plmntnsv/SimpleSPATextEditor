@@ -19,6 +19,8 @@ SystemJS.config({
   'loggedInNavController': 'scripts/controllers/logged-in-nav-controller.js',
   'loggedOutNavController': 'scripts/controllers/logged-out-nav-controller.js',
   'homeController': 'scripts/controllers/home-controller.js',
+  'publicTabController': 'scripts/controllers/public-controller.js',
+  'publicViewController': 'scripts/controllers/public-view-controller.js',
   // classes
   'workFile': 'scripts/work-file.js',
   'documentFile': 'scripts/document-file.js',
