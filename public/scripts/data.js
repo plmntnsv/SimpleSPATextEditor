@@ -76,3 +76,8 @@ export function getPublicFiles() {
     let url = `/data/public/`;
     return firebase.database().ref(url).once('value');
 }
+
+export function getPublicFile(fileName) {
+    let url = `/data/public/files/${fileName}`;
+    return firebase.database().ref(url).once('value');
+}

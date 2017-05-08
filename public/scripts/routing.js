@@ -8,6 +8,7 @@ import * as registerController from 'registerController';
 import * as logoutLogic from "logoutLogic";
 import * as homeController from "homeController";
 import * as publicTabController from "publicTabController";
+import * as publicViewController from "publicViewController";
 
 const router = (() => {
   const root = null;
@@ -37,19 +38,14 @@ const router = (() => {
 
   function loggedInInit() {
     router = new Navigo(root, useHash, hash);
+    let $contentContainer = $("#display-public-panel");
 
     router
       .on(() => { router.navigate("#/document"); })
       .on('/document', () => { documentController.get(); })
       .on('/saved-files', () => { categoriesController.get(); })
       .on('/public', () => { publicTabController.get(); })
-      .on('/public/:name', function (doc) {
-        console.log(doc.name);
-        // Promise.all([data.getById(file.id), templateLoader.get('/doc-file')])
-        // .then(([data, template]) => {
-        //   $contentContainer.append(template(data));
-        //});
-      })
+      .on("/public/:name", (file) => { publicViewController.get(file.name);} )
       .on('/sortes', () => { sortesController.get(); })
       .on('/profile', () => { profileController.get(); })
       .on('/log-out', () => { logoutLogic.init(); })

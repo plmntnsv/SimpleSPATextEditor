@@ -13,6 +13,5 @@ export function get() {
                     let theCompiledHtml = html(publicFiles);
                     $contentContainer.html(theCompiledHtml);
                  })
-                //  .then(() => savedFilesLogic.categoryFilesInit());
         });
 }
