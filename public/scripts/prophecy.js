@@ -12,3 +12,5 @@ class Prophecy {
         return this._text;
     }
 }
+
+export { Prophecy };

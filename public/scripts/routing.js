@@ -20,11 +20,12 @@ const router = (() => {
     router = new Navigo(root, useHash, hash);
 
     router
-      .on(() => { router.navigate("#/home"); })    
+      //.on(() => { router.navigate("#/home"); })    
       .on('/home',  () => { homeController.get(); })
       .on('/log-in',  () => { logInController.get(); })
       .on('/register', () => { registerController.get(); })
       .on('/public', () => { publicTabController.get(); })
+      .on("/public/:name", (file) => { publicViewController.get(file.name);} )
       .resolve();
   }
 

@@ -27,6 +27,7 @@ SystemJS.config({
   'categoryFile': 'scripts/category-file.js',
   'user' : 'scripts/user.js',
   'admin' : 'scripts/admin-user.js',
+  'prophecy' : 'scripts/prophecy.js',
   // app functionality
   'documentLogic': 'scripts/document-logic.js',
   'savedFilesLogic': 'scripts/saved-files-logic.js',

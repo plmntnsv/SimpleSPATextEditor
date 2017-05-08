@@ -1,39 +1,39 @@
 import { templateLoader } from 'templateLoader';
-
-let $contentContainer = $("#contents-container");
+import { Prophecy } from 'prophecy';
 
 export function get() {
     templateLoader.get('sortes')
         .then((template) => {
+          let $contentContainer = $("#contents-container");
           let html = template;
           $contentContainer.html(html);
 
             //submit question button 
-          var questionBtn = $(".submitBtn");
+          let questionBtn = $(".submitBtn");
 
             //random number button
-          var $randomNumBtn = $(".randomNumBtn");
+          let $randomNumBtn = $(".randomNumBtn");
 
             //question input field
-          var inputField = $("#EnterQuestion");
+          let inputField = $("#EnterQuestion");
 
             //input question string
-          var text = document.getElementById("text").innerHTML;
+          let text = document.getElementById("text").innerHTML;
 
             //random number button again for visibility purposes
-          var generateNumBtn = document.getElementsByClassName("randomNumBtn")[0];
+          let generateNumBtn = document.getElementsByClassName("randomNumBtn")[0];
 
             //random number result paragraph
-          var resultP = document.getElementById("resultNumP");
+          let resultP = document.getElementById("resultNumP");
 
             //prophecy paragraph
-          var prophecyP = document.getElementById("prophecyP");
+          let prophecyP = document.getElementById("prophecyP");
 
             //source Iliad text split
-          var textArr = text.split(/\r\n|\r|\n/g);
+          let textArr = text.split(/\r\n|\r|\n/g);
 
         //prophecies array
-          var prophecyArray = [];
+          let prophecyArray = [];
         
             //click submit question button, set and display question text and display generate random number button;
           questionBtn.click(function submitQuestion() {
