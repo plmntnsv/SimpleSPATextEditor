@@ -18,7 +18,7 @@ Once logged in with your user credentials you can access:
 - Basic text editing - bold, italics, underline, font-size and font-family change.
 - Creating and saving files.
 - Previewing, deleteing and making the saved files public for everyone to see.
-- The user creator chooses which file to make public.
+- The user creator chooses which files to make public.
 - Sharing the public files on Facebook.
 - Creating different categories for the files to organize them more easily.
 - Creating user profiles specifying username, user e-mail and user country.
