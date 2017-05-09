@@ -5,6 +5,7 @@ export function init() {
     firebase.auth().signOut().then(function() {
         console.log(user.displayName + ' logged out successfully');
         sessionStorage.removeItem("currentDoc");
+        location.hash = "/home";
     }).catch(function(error) {
   alert(error.message);
 });

@@ -52,44 +52,44 @@ export function savedFilesInit() {
     let $formToDel;
     let pToDelete;
 
-    $deleteButtons.on("click", function () {
+    $("#dialog").dialog({
+        autoOpen: false,
+    });
+
+    $deleteButtons.on("click", function (event) {
         $clickedDelBtn = $(this);
         fileName = $clickedDelBtn.attr("name");
         categoryName = $categorySelect.val();
         $clickedDelBtn.attr('disabled', 'disabled');
         pToDelete = $paragraphs.filter('[name="' + fileName + '"]');
-    });
-
-    $(".dialog-link").click(function (event) {
-            $("#dialog").dialog("open");
-            console.log(event);
-            event.preventDefault();
-        });
-
+        
+        $("#dialog").dialog("open");
+        event.preventDefault();
         $("#dialog").dialog({
-            autoOpen: false,
-            width: 400,
-            draggable: true,
-            resizable: false,
-            beforeClose: function (event, ui) {
-                $clickedDelBtn.removeAttr("disabled");
-            },
-            buttons: [{
-                    text: "Ok",
-                    click: function () {
-                        $clickedDelBtn.closest("form").remove();
-                        pToDelete.remove();
-                        data.getSavedFile(fileName, categoryName).then((snap) => data.deleteFile(fileName, categoryName));
-                        $( this ).dialog("close");
-                    }
-                },
-                {
-                    text: "Cancel",
-                    click: function () {
-                        $clickedDelBtn.removeAttr("disabled");
-                        $( this ).dialog("close");
-                    }
+        autoOpen: false,
+        width: 400,
+        draggable: true,
+        resizable: false,
+        close: function (event, ui) {
+            $clickedDelBtn.removeAttr("disabled");
+        },
+        buttons: [{
+                text: "Ok",
+                click: function () {
+                    $clickedDelBtn.closest("form").remove();
+                    pToDelete.remove();
+                    data.getSavedFile(fileName, categoryName).then((snap) => data.deleteFile(fileName, categoryName));
+                    $(this).dialog("close");
                 }
-            ]
-        });
+            },
+            {
+                text: "Cancel",
+                click: function () {
+                    $clickedDelBtn.removeAttr("disabled");
+                    $(this).dialog("close");
+                }
+            }
+        ]
+    });
+    });
 }
