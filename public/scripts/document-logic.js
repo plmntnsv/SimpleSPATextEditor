@@ -29,13 +29,17 @@ export function init() {
     $txtArea.focus();
 
     if (sessionStorage.getItem("currentDoc")) {
+        console.log(sessionStorage);
         $txtArea.html(sessionStorage.getItem("currentDoc"));
+        $txtArea.css("font-family", sessionStorage.getItem("fFam"));
+        $txtArea.css("font-size", parseInt(sessionStorage.getItem("fSize")));
         $saveFileBtn.removeAttr('disabled');
         $clearBtn.removeAttr('disabled');
     }
 
     $txtArea.on("input", function () {
         sessionStorage.setItem("currentDoc", $txtArea.html());
+        console.log(sessionStorage);
         if ($txtArea.text().length <= 0) {
             $saveFileBtn.attr('disabled', 'disabled');
             $clearBtn.attr('disabled', 'disabled');
@@ -150,6 +154,7 @@ export function init() {
     $fontFamilySelect.change(function () {
         let family = $(this).val();
         let text = $txtArea.html();
+        sessionStorage.setItem("fFam", family);
         $txtArea.css("font-family", family);
         $txtArea.html(text);
     });
@@ -157,6 +162,7 @@ export function init() {
     $fontSizeSelect.change(function () {
         let size = $(this).val();
         let text = $txtArea.html();
+        sessionStorage.setItem("fSize", size);
         $txtArea.css("font-size", `${size}px`);
         $txtArea.html(text);
     });
