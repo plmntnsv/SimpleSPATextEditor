@@ -83,7 +83,7 @@ export function init() {
             return false;
         }
 
-        if (!(/^[0-9a-zA-Z]+$/).test($enterEmail.val())) {
+        if (!(/^[0-9a-zA-Z@.]+$/).test($enterEmail.val())) {
             alert("Email must contain only latin letters.");
             return false;
         }

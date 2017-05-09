@@ -37,7 +37,6 @@ export function init() {
 function validateLogIn() {
     let $logInEmail = $("#log-in-email");
     let $logInPassword = $("#log-in-password");
-    console.log((/^[0-9a-zA-Z]+$/).test($logInPassword.val()));
 
     if (!(/^[0-9a-zA-Z]+$/).test($logInPassword.val())) {
         alert("Passwords must contain only latin letters.");
@@ -54,10 +53,10 @@ function validateLogIn() {
         return false;
     }
     
-    // if (!(/^[0-9a-zA-Z&.-]+$/).test($logInEmail.val())) {
-    //     alert("Email must contain only latin letters.");
-    //     return false;
-    // }
+    if (!(/^[0-9a-zA-Z@.]+$/).test($logInEmail.val())) {
+        alert("Email must contain only latin letters.");
+        return false;
+    }
 
     if ($logInEmail.val() === "") {
         alert("E-mail cannot be empty.");
