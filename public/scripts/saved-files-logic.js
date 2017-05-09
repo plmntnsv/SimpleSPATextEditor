@@ -33,11 +33,16 @@ export function savedFilesInit() {
         let categoryName = $categorySelect.val();
         data.getSavedFile(fileName, categoryName).then((snap) => {
             $displayPreview.html(snap.val()._content);
+            $displayPreview.css("font-family", snap.val().fontFamily);
+            $displayPreview.css("font-size", snap.val().fontSize);
         });
     });
 
     $makePublicButtons.on("click", function () {
-        let fileName = $(this).attr("name");
+        let $this = $(this);
+        $this.attr('disabled', 'disabled');        
+        $this.attr('value', 'File is now public');
+        let fileName = $this.attr("name");
         let categoryName = $categorySelect.val();
         data.getSavedFile(fileName, categoryName).then((snap) => {
             let file = snap.val();

@@ -37,6 +37,12 @@ export function init() {
 function validateLogIn() {
     let $logInEmail = $("#log-in-email");
     let $logInPassword = $("#log-in-password");
+    console.log($logInEmail.val().match(/^[0-9a-zA-Z]+$/));
+    
+    if ($logInPassword.val().match(/^[0-9a-zA-Z]+$/) === false) {
+        alert("Passwords must contain only latin letters.");
+        return false;
+    }
 
     if ($logInPassword.val() === "") {
         alert("Password cannot be empty.");
@@ -47,6 +53,11 @@ function validateLogIn() {
         alert("Password is too short.");
         return false;
     }
+    
+    if ($logInEmail.val().match(/^[0-9a-zA-Z]+$/) === false) {
+            alert("Email must contain only latin letters.");
+            return false;
+        }
 
     if ($logInEmail.val() === "") {
         alert("E-mail cannot be empty.");

@@ -95,19 +95,24 @@ export function init() {
             alert("Name cannot be empty!");
             return;
         }
+
         let author = user.displayName;
+        let fFamily = $fontFamilySelect.val();
+        let fSize = $fontSizeSelect.val()
+
         // if no new category is provided the file is saved to the DB for the selected category else creates new category and saves it there
         if (newCategoryName === "") {
             categoryName = $chooseCategory.val();
+           
             
-            let newFile = new DocumentFile(name, author, categoryName, textAreaContent);
+            let newFile = new DocumentFile(name, author, categoryName, textAreaContent, fFamily, fSize);
             data.postSaveFile(categoryName, newFile);
         } else {
             categoryName = $createCategoryName.val();
             let $newOption = $(`<option value="${categoryName}">${categoryName}</option>`);
             $newOption.appendTo($chooseCategory);
             category = new CategoryFile(categoryName, author);
-            let newFile = new DocumentFile(name, author, category._name, textAreaContent);
+            let newFile = new DocumentFile(name, author, category._name, textAreaContent, fFamily, fSize);
 
             data.postCategory(category, newFile);
         }

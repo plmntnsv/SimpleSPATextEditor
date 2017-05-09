@@ -4,15 +4,19 @@ import * as data from "data";
 let $contentContainer = $("#contents-container");
 
 export function get(fileName) {
+    let publicFile;
     templateLoader.get('public-view')
         .then((template) => {
             let html = template;
             let context = data.getPublicFile(fileName)
                 .then(function (snapshot) {
-                    let publicFile = snapshot.val();
+                    publicFile = snapshot.val();
                     let theCompiledHtml = html(publicFile);
                     $contentContainer.html(theCompiledHtml);
                 }).then(() => {
+                    let txtElement = $("#art-text-p");
+                    txtElement.css("font-family", publicFile.fontFamily);
+                    txtElement.css("font-size", publicFile.fontSize);
                     (function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
                         if (d.getElementById(id)) return;
