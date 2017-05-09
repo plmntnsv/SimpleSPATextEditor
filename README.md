@@ -24,6 +24,13 @@ Once logged in with your user credentials you can access:
 - Creating user profiles specifying username, user e-mail and user country.
 - Fortune teller for alleviating writer's block.
 
+# Uses
+- HTML5, CSS3, Javascript
+- jQuery
+- Firebase
+- Boostrap
+- Mocha
+
 # Live Demo
 https://team-harpy-text-editor-e059c.firebaseapp.com/#/home
 
