@@ -20,7 +20,7 @@ const router = (() => {
     router = new Navigo(root, useHash, hash);
 
     router
-      //.on(() => { router.navigate("#/home"); })    
+      .on(() => { router.navigate("#/home"); })    
       .on('/home',  () => { homeController.get(); })
       .on('/log-in',  () => { logInController.get(); })
       .on('/register', () => { registerController.get(); })
@@ -41,7 +41,7 @@ const router = (() => {
     router = new Navigo(root, useHash, hash);
 
     router
-      //.on(() => { router.navigate("#/document"); })
+      .on(() => { router.navigate("#/document"); })
       .on('/document', () => { documentController.get(); })
       .on('/saved-files', () => { categoriesController.get(); })
       .on('/public', () => { publicTabController.get(); })

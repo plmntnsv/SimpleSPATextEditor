@@ -4,7 +4,6 @@ import * as data from "data";
 let $contentContainer = $("#contents-container");
 
 export function get(fileName) {
-    console.log(fileName);
     templateLoader.get('public-view')
         .then((template) => {
             let html = template;

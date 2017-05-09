@@ -9,6 +9,17 @@
     margin: 5px;
 }
 
+#logo-img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+h1 {
+    display: inline-block;
+    margin-left: 70px;
+}
+
 footer, header, nav, aside, section, main {
     font-size: 1.1em;
     border: 1px solid black;
@@ -16,7 +27,7 @@ footer, header, nav, aside, section, main {
     padding: 5px;
 }
 
-header {
+main > article > header {
     text-align: center;
 }
 
@@ -35,10 +46,6 @@ nav > ul > li {
 main > ul {
     margin-left: 25px;
 }
-
-/*main > section:last-of-type {
-    height: 80%;
-}*/
 
 #section-textarea {
     height: 80%;

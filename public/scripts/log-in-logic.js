@@ -21,6 +21,7 @@ export function init() {
             let $sideInfo = $("#side-info");
             $sideInfo.html(`Hello, ${user.displayName}!`);
             sessionStorage.setItem("userLogged", user.displayName);
+            location.hash = "/profile";
             console.log(user.displayName + ' successfully logged-in.');
         });
     });

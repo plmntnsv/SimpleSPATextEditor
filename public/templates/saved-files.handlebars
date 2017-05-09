@@ -1,15 +1,19 @@
-{{#each files}}
-<section>
-    <p>"{{_name}}" by {{_author}} in "{{_category}}" category - {{createdOn}}</p>
+<section id="accordion">
+    {{#each files}}
+    <p class="paragraph" name="{{_name}}">"{{_name}}" by {{_author}} in "{{_category}}" category - {{createdOn}}</p>
     <form action="">
         <input class="preview-btn" name="{{_name}}" type="button" value="Preview">
-        <input class="delete-btn" name="{{_name}}" type="button" value="Delete">
-        <input class="make-public-btn" name="{{_name}}" type="button" {{#if isPublic}} value="File is public" disabled="disabled" {{else}} value="Make public" {{/if}}>
-        <p>{{isPublic}}</p>
+        <input class="delete-btn dialog-link" name="{{_name}}" type="button" value="Delete">
+        <input class="make-public-btn" type="button" name="{{_name}}" {{#if isPublic}}disabled="disabled" value="File is public"
+            {{else}}value="Make public" {{/if}}>
     </form>
+
+    {{!--
     <form action="" class="conformation-form hidden" name="{{_name}}">
         <input class="yes-btn" name="{{_name}}" type="button" value="Yes">
         <input class="no-btn" name="{{_name}}" type="button" value="No">
-    </form>
+    </form>--}} {{/each}}
 </section>
-{{/each}}
+<div id="dialog" title="Dialog Title">
+    <p>Are you sure?</p>
+</div>
