@@ -7,6 +7,7 @@ Edit your text any way you like. Save it easily in files. Order them neatly in c
 - Login page with e-mail and password input.
 - Register page with username, password, e-mail and country user input information.
 - Public files page with a list of published publicly available text files.
+
 Once logged in with your user credentials you can access:
 - Document page for editing text and saving it in files.
 - Saved files page with lists of files the user has saved displayed per category.
