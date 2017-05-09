@@ -52,14 +52,28 @@ export function savedFilesInit() {
     let $formToDel;
     let pToDelete;
 
+    $deleteButtons.on("click", function () {
+        $clickedDelBtn = $(this);
+        fileName = $clickedDelBtn.attr("name");
+        categoryName = $categorySelect.val();
+        $clickedDelBtn.attr('disabled', 'disabled');
+        pToDelete = $paragraphs.filter('[name="' + fileName + '"]');
+    });
+
     $(".dialog-link").click(function (event) {
             $("#dialog").dialog("open");
+            console.log(event);
             event.preventDefault();
         });
 
         $("#dialog").dialog({
             autoOpen: false,
             width: 400,
+            draggable: true,
+            resizable: false,
+            beforeClose: function (event, ui) {
+                $clickedDelBtn.removeAttr("disabled");
+            },
             buttons: [{
                     text: "Ok",
                     click: function () {
@@ -78,36 +92,4 @@ export function savedFilesInit() {
                 }
             ]
         });
-
-    $deleteButtons.on("click", function () {
-        $clickedDelBtn = $(this);
-        fileName = $clickedDelBtn.attr("name");
-        categoryName = $categorySelect.val();
-        $clickedDelBtn.attr('disabled', 'disabled');
-        pToDelete = $paragraphs.filter('[name="' + fileName + '"]');
-        
-
-        // let $selectedConformationForm = $conformationForms.filter('[name="' + fileName + '"]');
-
-        // $selectedConformationForm.removeClass("hidden");
-    });
-
-    // $yesBtn.on("click", function () {
-    //     let $this = $(this);
-    //     let fileName = $this.attr("name");
-    //     let categoryName = $categorySelect.val();
-    //     let $selectedConformationForm = $conformationForms.filter('[name="'+fileName+'"]');
-    //     $selectedConformationForm.closest("section").remove();
-
-    //     data.getSavedFile(fileName, categoryName).then((snap) => data.deleteFile(fileName, categoryName));
-    // });
-
-    //  $noBtn.on("click", function () {
-    //     let $this = $(this);
-    //     let fileName = $this.attr("name");
-    //     let $selectedConformationForm = $conformationForms.filter('[name="'+fileName+'"]');
-    //     let $deleteBtn = $deleteButtons.filter('[name="'+fileName+'"]');
-    //     $deleteBtn.removeAttr("disabled");
-    //     $selectedConformationForm.addClass("hidden");
-    // });
 }

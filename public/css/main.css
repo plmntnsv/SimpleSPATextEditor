@@ -93,3 +93,7 @@ main > ul {
 #register-form{
     width: 200px;
 }
+
+#art-text > p {
+    text-align: center;
+}
