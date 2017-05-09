@@ -18,7 +18,7 @@ export function get() {
                     $navTabs.removeClass("selected-nav");
                     let $publicTab = $("#nav-public");
                     $publicTab.addClass("selected-nav");
-                    $(".tooltip").tooltip();
+                    $(".tooltipJQ").tooltip();
                 });
         });
 }

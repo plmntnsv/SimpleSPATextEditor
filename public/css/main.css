@@ -4,8 +4,7 @@
 }
 
 #wrapper{
-    width:98%;
-    border: 1px solid red;
+    border: 1px solid #007FFF;
     margin: 5px;
 }
 
@@ -20,10 +19,19 @@ h1 {
     margin-left: 70px;
 }
 
+aside, main {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+}
+
+aside {
+    border-bottom: none;
+}
+
 footer, header, nav, aside, section, main {
     font-size: 1.1em;
-    border: 1px solid black;
-    margin: 5px;
+    margin:0px 5px 0 5px;
     padding: 5px;
 }
 
@@ -46,7 +54,7 @@ nav > ul > li {
 }
 
 .selected-nav {
-    width: 12%;
+    width: 150px;
     background-color: #007FFF;
 }
 
@@ -109,3 +117,6 @@ main > ul {
     text-align: center;
 }
 
+#log-in-form {
+    width: 200px;
+}
