@@ -14,7 +14,7 @@ describe('savedFilesLogicTests', function () {
     });
     it('clicking "make public" button should publish file', function () {
         savedFilesLogic.$makePublicButtons.click();
-        expect(savedFilesLogic.file.isPublic).to.equal(true);
+        expect(savedFilesLogic.file.isPublic).to.be.true;
         expect(savedFilesLogic.data.postPublicFile).to.have.been.called.with(savedFilesLogic.file);;
         expect(console.log).to.have.been.called.with('successfully posted to public.');
     });
