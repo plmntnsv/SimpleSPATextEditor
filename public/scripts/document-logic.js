@@ -22,6 +22,10 @@ export function init() {
     let searchContent;
     let user = firebase.auth().currentUser;
 
+    let $navTabs = $(".nav-item");
+    $navTabs.removeClass("selected-nav");
+    let $documentTab = $("#nav-doc");
+    $documentTab.addClass("selected-nav");
     $txtArea.focus();
 
     if (sessionStorage.getItem("currentDoc")) {

@@ -12,6 +12,13 @@ export function get() {
                     let publicFiles = snapshot.val();
                     let theCompiledHtml = html(publicFiles);
                     $contentContainer.html(theCompiledHtml);
-                 })
+                })
+                .then(() => {
+                    let $navTabs = $(".nav-item");
+                    $navTabs.removeClass("selected-nav");
+                    let $publicTab = $("#nav-public");
+                    $publicTab.addClass("selected-nav");
+                    $(".tooltip").tooltip();
+                });
         });
 }

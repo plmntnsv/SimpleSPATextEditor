@@ -12,6 +12,10 @@ export function init() {
     let $enterUsername = $("#enter-username");
     let $chooseCountry = $("#choose-country");
     let $enterEmail = $("#enter-email");
+    let $navTabs = $(".nav-item");
+    $navTabs.removeClass("selected-nav");
+    let $registerTab = $("#nav-register");
+    $registerTab.addClass("selected-nav");
 
     $registerBtn.on("click", function () {
         let userName = $enterUsername.val();

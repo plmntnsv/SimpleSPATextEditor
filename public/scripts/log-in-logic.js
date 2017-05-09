@@ -7,6 +7,10 @@ export function init() {
     let $logInEmail = $("#log-in-email");
     let $logInPassword = $("#log-in-password");    
     let $logInBtn = $("#log-in-submit");
+    let $navTabs = $(".nav-item");
+    $navTabs.removeClass("selected-nav");
+    let $logInTab = $("#nav-login");
+    $logInTab.addClass("selected-nav");
 
     $logInBtn.on("click", function () {
         let email = $logInEmail.val();

@@ -4,15 +4,8 @@
     <form action="">
         <input class="preview-btn" name="{{_name}}" type="button" value="Preview">
         <input class="delete-btn dialog-link" name="{{_name}}" type="button" value="Delete">
-        <input class="make-public-btn" type="button" name="{{_name}}" {{#if isPublic}}disabled="disabled" value="File is public"
-            {{else}}value="Make public" {{/if}}>
+        <input class="make-public-btn" type="button" name="{{_name}}" {{#if isPublic}}disabled="disabled" value="File is public"{{else}}value="Make public" {{/if}}>
     </form>
-
-    {{!--
-    <form action="" class="conformation-form hidden" name="{{_name}}">
-        <input class="yes-btn" name="{{_name}}" type="button" value="Yes">
-        <input class="no-btn" name="{{_name}}" type="button" value="No">
-    </form>--}} 
     {{/each}}
 </section>
 <div id="dialog" title="Delete">

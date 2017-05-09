@@ -41,6 +41,17 @@ nav > ul > li {
     display: inline-block;
     border: 1px solid black;
     padding: 3px;
+    background-color: #EDEDED;
+    text-align: center;
+}
+
+.selected-nav {
+    width: 12%;
+    background-color: #007FFF;
+}
+
+.selected-nav > a {
+    color: white;
 }
 
 main > ul {
@@ -97,3 +108,4 @@ main > ul {
 #art-text > p {
     text-align: center;
 }
+

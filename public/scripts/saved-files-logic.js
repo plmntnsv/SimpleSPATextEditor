@@ -10,6 +10,10 @@ export function categoryFilesInit() {
         let category = $(this).val();
         savedFilesController.get(category);
     });
+    let $navTabs = $(".nav-item");
+    $navTabs.removeClass("selected-nav");
+    let $savedFilesTab = $("#nav-saved");
+    $savedFilesTab.addClass("selected-nav");
 }
 
 export function savedFilesInit() {
@@ -20,8 +24,7 @@ export function savedFilesInit() {
     let $makePublicButtons = $(".make-public-btn");
     let $displayPreview = $("#display-perview");
     let $conformationForms = $(".conformation-form");
-    let $yesBtn = $(".yes-btn");
-    let $noBtn = $(".no-btn");
+    let $dialog = $("#dialog");
 
     $("#accordion").accordion();
 
@@ -46,50 +49,44 @@ export function savedFilesInit() {
         });
     });
 
-    let fileName;
-    let categoryName;
-    let $clickedDelBtn;
-    let $formToDel;
-    let pToDelete;
-
-    $("#dialog").dialog({
+    $dialog.dialog({
         autoOpen: false,
     });
 
     $deleteButtons.on("click", function (event) {
-        $clickedDelBtn = $(this);
-        fileName = $clickedDelBtn.attr("name");
-        categoryName = $categorySelect.val();
+        let $clickedDelBtn = $(this);
+        let fileName = $clickedDelBtn.attr("name");
+        let categoryName = $categorySelect.val();
+        let pToDelete = $paragraphs.filter('[name="' + fileName + '"]');        
         $clickedDelBtn.attr('disabled', 'disabled');
-        pToDelete = $paragraphs.filter('[name="' + fileName + '"]');
-        
-        $("#dialog").dialog("open");
+
+        $dialog.dialog("open");
         event.preventDefault();
-        $("#dialog").dialog({
-        autoOpen: false,
-        width: 400,
-        draggable: true,
-        resizable: false,
-        close: function (event, ui) {
-            $clickedDelBtn.removeAttr("disabled");
-        },
-        buttons: [{
-                text: "Ok",
-                click: function () {
-                    $clickedDelBtn.closest("form").remove();
-                    pToDelete.remove();
-                    data.getSavedFile(fileName, categoryName).then((snap) => data.deleteFile(fileName, categoryName));
-                    $(this).dialog("close");
-                }
+        $dialog.dialog({
+            autoOpen: false,
+            width: 400,
+            draggable: true,
+            resizable: false,
+            close: function (event, ui) {
+                $clickedDelBtn.removeAttr("disabled");
             },
-            {
-                text: "Cancel",
-                click: function () {
-                    $clickedDelBtn.removeAttr("disabled");
-                    $(this).dialog("close");
+            buttons: [{
+                    text: "Ok",
+                    click: function () {
+                        $clickedDelBtn.closest("form").remove();
+                        pToDelete.remove();
+                        data.getSavedFile(fileName, categoryName).then((snap) => data.deleteFile(fileName, categoryName));
+                        $(this).dialog("close");
+                    }
+                },
+                {
+                    text: "Cancel",
+                    click: function () {
+                        $clickedDelBtn.removeAttr("disabled");
+                        $(this).dialog("close");
+                    }
                 }
-            }
-        ]
-    });
+            ]
+        });
     });
 }
