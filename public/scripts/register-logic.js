@@ -58,7 +58,7 @@ export function init() {
     });
 
     function validate() {
-        if ($enterPasswordField.val().match(/^[0-9a-zA-Z]+$/) === false) {
+        if (!(/^[0-9a-zA-Z]+$/).test($enterPasswordField.val())) {
             alert("Passwords must contain only latin letters.");
             return false;
         }
@@ -73,7 +73,7 @@ export function init() {
             return false;
         }
 
-        if ($enterUsername.val().match(/^[0-9a-zA-Z]+$/) === false) {
+        if (!(/^[0-9a-zA-Z]+$/).test($enterUsername.val())) {
             alert("Username must contain only latin letters.");
             return false;
         }
@@ -83,7 +83,7 @@ export function init() {
             return false;
         }
 
-        if ($enterEmail.val().match(/^[0-9a-zA-Z]+$/) === false) {
+        if (!(/^[0-9a-zA-Z]+$/).test($enterEmail.val())) {
             alert("Email must contain only latin letters.");
             return false;
         }
