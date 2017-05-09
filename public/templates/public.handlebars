@@ -1,5 +1,24 @@
-<ul>
+{{!--<ul>
     {{#each files}}
     <li><p class="tooltipJQ"><a href="#/public/{{_name}}" title="Click to view or share the document"><strong>{{_name}}</strong> by <strong>{{_author}}</strong></a></p></li>
     {{/each}}
-</ul>
+</ul>--}}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Published on</th>        
+        </tr>
+    </thead>
+    <tbody>
+        {{#each files}}
+        <tr>
+            <td><p class="tooltipJQ"><a href="#/public/{{_name}}" title="Click to view or share the document">{{_name}}</a></p></td>
+            <td><p>{{_author}}</p></td>
+            <td><p>{{createdOn}}</p></td>
+        </tr>
+         {{/each}}
+    </tbody>
+</table>

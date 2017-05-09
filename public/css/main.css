@@ -80,6 +80,8 @@ main > ul {
     font-family: Verdana;
     height: 300px;
     overflow-y: scroll;
+    border: 1px solid black;
+    outline: none;
 }
 
 #preview-panel {
@@ -119,4 +121,17 @@ main > ul {
 
 #log-in-form {
     width: 200px;
+}
+
+#log-in-password {
+    margin-bottom: 5px;
+}
+
+#choose-country {
+    display: block;
+    margin-bottom: 5px;
+}
+
+main > section > form {
+    margin-bottom: 5px;
 }
