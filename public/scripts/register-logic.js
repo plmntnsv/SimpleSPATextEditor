@@ -24,8 +24,6 @@ export function init() {
         let country = $chooseCountry.val();
 
         if (validate()) {
-            let newUser = new User(userName, email, country);
-
             firebase.auth().createUserWithEmailAndPassword(email, password)
                 .catch(function (error) {
                     let errorCode = error.code;
@@ -37,6 +35,7 @@ export function init() {
                     user.updateProfile({
                         displayName: userName
                     }).then(function () {
+                        let newUser = new User(userName, email, country);
                         let $sideInfo = $("#side-info");
                         $sideInfo.html(`Hello, ${user.displayName}!`);
                         sessionStorage.setItem("userLogged", user.displayName);
@@ -44,8 +43,10 @@ export function init() {
 
                         let mainCategory = new CategoryFile("Main", "Admin");
                         let text = "This is your default category. Feel free to add, delete, preview and share files here or you can create your own categories.";
-                        let greetingFile = new DocumentFile("Hello", "Admin", mainCategory._name, text);
-
+                        let fontFamily = "Verdana";
+                        let fontSize = 15;
+                        let greetingFile = new DocumentFile("Hello", "Admin", mainCategory._name, text, fontFamily, fontSize);
+                        location.hash = "/profile";
                         data.postCategory(mainCategory, greetingFile).then(() => {console.log('successfully posted main file');});
                         data.postUser(newUser);
                     }, function (error) {

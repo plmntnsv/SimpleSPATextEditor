@@ -29,7 +29,6 @@ export function init() {
     $txtArea.focus();
 
     if (sessionStorage.getItem("currentDoc")) {
-        console.log(sessionStorage);
         $txtArea.html(sessionStorage.getItem("currentDoc"));
         $txtArea.css("font-family", sessionStorage.getItem("fFam"));
         $txtArea.css("font-size", parseInt(sessionStorage.getItem("fSize")));
