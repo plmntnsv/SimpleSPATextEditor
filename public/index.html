@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/sortes-styles.css" />
     <link rel="stylesheet" href="./css/jquery-ui.css" />
+    <!--Firebase initialization-->
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBEM0PgfhYMdL4A4D6dmOLWUkXLVzQYWOE",
+            authDomain: "team-harpy-text-editor-e059c.firebaseapp.com",
+            databaseURL: "https://team-harpy-text-editor-e059c.firebaseio.com",
+            projectId: "team-harpy-text-editor-e059c",
+            storageBucket: "team-harpy-text-editor-e059c.appspot.com",
+            messagingSenderId: "344294327829"
+        };
+        firebase.initializeApp(config);
+    </script>
     <!--<meta property="og:url" content="https://team-harpy-text-editor-e059c.firebaseapp.com/#/public/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Article" />
@@ -32,29 +45,15 @@
         <div id="fb-root"></div>
     </div>
 
-    <script src="./node_modules/systemjs/dist/system.js"></script>
-    <script src="./scripts/system-config.js"></script>
-
     <!--External libraries-->
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./scripts/jquery-ui.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>    
     <script src="./node_modules/handlebars/dist/handlebars.js"></script>
     <script src="./node_modules/navigo/lib/navigo.js"></script>
-
-    <!--Firebase initialization-->
-    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyBEM0PgfhYMdL4A4D6dmOLWUkXLVzQYWOE",
-            authDomain: "team-harpy-text-editor-e059c.firebaseapp.com",
-            databaseURL: "https://team-harpy-text-editor-e059c.firebaseio.com",
-            projectId: "team-harpy-text-editor-e059c",
-            storageBucket: "team-harpy-text-editor-e059c.appspot.com",
-            messagingSenderId: "344294327829"
-        };
-        firebase.initializeApp(config);
-    </script>
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <!--System configuration-->
+    <script src="./scripts/system-config.js"></script>
 </body>
 
 </html>
