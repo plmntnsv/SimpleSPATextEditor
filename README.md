@@ -35,5 +35,5 @@ Once logged in with your user credentials you can access:
 https://team-harpy-text-editor-e059c.firebaseapp.com/#/home
 
 # Contributors:
-Пламен Атанасов - plmn.tnsv: http://telerikacademy.com/Users/plmn.tnsv | 
-Емил Иванов - starter_e: http://telerikacademy.com/Users/starter_e
+- Пламен Атанасов - plmn.tnsv: http://telerikacademy.com/Users/plmn.tnsv 
+- Емил Иванов - starter_e: http://telerikacademy.com/Users/starter_e
