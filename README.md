@@ -27,6 +27,7 @@ Once logged in with your user credentials you can access:
 # Uses
 - HTML5, CSS3, Javascript
 - jQuery
+- jQuery UI
 - Firebase
 - Boostrap
 - Mocha
