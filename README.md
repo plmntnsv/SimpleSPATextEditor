@@ -35,12 +35,5 @@ Once logged in with your user credentials you can access:
 https://team-harpy-text-editor-e059c.firebaseapp.com/#/home
 
 # Contributors:
-Пламен Атанасов - plmn.tnsv:http://telerikacademy.com/Users/plmn.tnsv | Емил Иванов - starter_e:http://telerikacademy.com/Users/starter_e | Ивелин Ралев - IvelinR:http://telerikacademy.com/Users/IvelinR
-
-# TODO:
-- Main functionallity + layout of the app
-- Using sessionStorage for logged-in user
-- Bootstrap + UI
-- Web data storage (Firebase)
-- Unit tests
-- sortes-controller - use jquery
+Пламен Атанасов - plmn.tnsv: http://telerikacademy.com/Users/plmn.tnsv | 
+Емил Иванов - starter_e: http://telerikacademy.com/Users/starter_e
