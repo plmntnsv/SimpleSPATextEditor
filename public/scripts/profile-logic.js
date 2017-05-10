@@ -4,6 +4,7 @@ export function init() {
     let $profileUsername = $("#profile-username");
     let $profileEmail = $("#profile-email");
     let $profileCreation = $("#profile-date-created");
+    let $profileCountry = $("#profile-country");
     let $navTabs = $(".nav-item");
     $navTabs.removeClass("selected-nav");
     let $profileTab = $("#nav-profile");
@@ -14,6 +15,7 @@ export function init() {
             $profileUsername.html(user._name);
             $profileEmail.html(user._email);
             $profileCreation.html(user.createdOn);
+            $profileCountry.html(user._country);
         });
 
 }
