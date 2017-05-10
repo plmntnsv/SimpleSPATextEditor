@@ -38,7 +38,6 @@ export function init() {
 
     $txtArea.on("input", function () {
         sessionStorage.setItem("currentDoc", $txtArea.html());
-        console.log(sessionStorage);
         if ($txtArea.text().length <= 0) {
             $saveFileBtn.attr('disabled', 'disabled');
             $clearBtn.attr('disabled', 'disabled');
@@ -50,9 +49,8 @@ export function init() {
 
     $txtArea.on("focus", function () {
         let text = $txtArea.html();
-
-        var regexpStart = new RegExp('<span class="search-result">', "g");
-        var regexpEnd = new RegExp('</span>', "g");
+        let regexpStart = new RegExp('<span class="search-result">', "g");
+        let regexpEnd = new RegExp('</span>', "g");
         text = text.replace(regexpStart, '');
         text = text.replace(regexpEnd, '');
         $txtArea.html(text);
@@ -62,8 +60,7 @@ export function init() {
     $searchBtn.on("click", function () {
         searchContent = $inputSearchVal.val();
         let text = $txtArea.html();
-
-        var regexp = new RegExp(searchContent, "g");
+        let regexp = new RegExp(searchContent, "g");
         text = text.replace(regexp, `<span class="search-result">${searchContent}</span>`);
         $txtArea.html(text);
     });
